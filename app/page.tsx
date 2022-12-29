@@ -4,11 +4,11 @@ async function getData()
 {
   const res = await fetch('https://api.github.com/repos/davendrajayasingam/davendra.me/contents/',
     {
-      headers: {
-        Accept: 'application/vnd.github+json',
-        Authorization: `token ${process.env.GITHUB_TOKEN}`,
-        'X-GitHub-Api-Version': '2022-11-28',
-      },
+      // headers: {
+      //   Accept: 'application/vnd.github+json',
+      //   Authorization: `token ${process.env.GITHUB_TOKEN}`,
+      //   'X-GitHub-Api-Version': '2022-11-28',
+      // },
       next: {
         revalidate,
       },
