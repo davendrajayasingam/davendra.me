@@ -58,7 +58,7 @@ const fetchHelper = async ({ url, payload }: FetchHelperProps) =>
     return payload.sort((a, b) => a.type === 'dir' ? b.type === 'dir' ? a.name.localeCompare(b.name) : -1 : b.type === 'dir' ? 1 : a.name.localeCompare(b.name))
 }
 
-export default async function fetchGitHubFiles()
+const fetchGitHubFiles = async () =>
 {
     const res = await fetchHelper({
         url: process.env.GITHUB_URL!,
@@ -67,3 +67,5 @@ export default async function fetchGitHubFiles()
 
     return res
 }
+
+export default fetchGitHubFiles
