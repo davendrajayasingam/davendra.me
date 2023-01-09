@@ -1,14 +1,16 @@
-const fetchHelper = async ({ url, payload }: { url: string, payload: Array<any> }) =>
+type FetchHelperProps = {
+    url: string,
+    payload: Array<RepoFileData>,
+}
+
+const fetchHelper = async ({ url, payload }: FetchHelperProps) =>
 {
     const res = await fetch(url,
         {
-            // headers: {
-            //     Accept: 'application/vnd.github+json',
-            //     Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
-            //     'X-GitHub-Api-Version': '2022-11-28',
-            // },
-            next: {
-                revalidate: 3600,
+            headers: {
+                Accept: 'application/vnd.github+json',
+                Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
+                'X-GitHub-Api-Version': '2022-11-28',
             },
         }
     )
@@ -31,27 +33,32 @@ const fetchHelper = async ({ url, payload }: { url: string, payload: Array<any> 
 
     for (const file of res)
     {
-        payload.push({
+        const fileData: RepoFileData = {
             name: file.name,
             path: file.path,
             type: file.type,
-            url: file.download_url,
-        })
+        }
 
         // if it's a directory, fetch the files inside it
         if (file.type === 'dir')
         {
             await fetchHelper({
                 url: `${url}/${file.path}`,
-                payload,
+                payload: fileData.children = [],
             })
         }
+        else
+        {
+            fileData.data = await fetch(file.download_url).then(res => res.text())
+        }
+
+        payload.push(fileData)
     }
 
-    return payload
+    return payload.sort((a, b) => a.type === 'dir' ? b.type === 'dir' ? a.name.localeCompare(b.name) : -1 : b.type === 'dir' ? 1 : a.name.localeCompare(b.name))
 }
 
-export default async function fetchGithubFiles()
+export default async function fetchGitHubFiles()
 {
     const res = await fetchHelper({
         url: process.env.GITHUB_URL!,

@@ -1,15 +1,13 @@
-import fetchGithubRepo from '@/utils/fetchGithubRepo'
+import fetchGitHubRepo from '@/utils/fetchGitHubRepo'
+import Homepage from '@/app/Homepage'
 
 export default async function Home()
 {
-  const data = await fetchGithubRepo()
+  const repoData = await fetchGitHubRepo()
 
   return (
-    <main className='font-sans'>
-      <div>
-        <h1>Homepage</h1>
-        <p>{JSON.stringify(data, null, 4)}</p>
-      </div>
-    </main>
+    <Homepage
+      repoData={repoData}
+    />
   )
 }
