@@ -16,22 +16,22 @@ const AutoCodeBlock = ({ repoFileData }: Props) =>
         return <JavaScriptCodeBlock codeString={repoFileData.data!} />
     }
 
-    if (repoFileData.name.endsWith('.ts') || repoFileData.name.endsWith('.tsx'))
+    else if (repoFileData.name.endsWith('.ts') || repoFileData.name.endsWith('.tsx'))
     {
         return <TypeScriptCodeBlock codeString={repoFileData.data!} />
     }
 
-    if (repoFileData.name.endsWith('.json'))
+    else if (repoFileData.name.endsWith('.json'))
     {
         return <JSONCodeBlock codeString={repoFileData.data!} />
     }
 
-    if (repoFileData.name.endsWith('.css'))
+    else if (repoFileData.name.endsWith('.css'))
     {
         return <CSSCodeBlock codeString={repoFileData.data!} />
     }
 
-    if (repoFileData.name.endsWith('.md') || repoFileData.name.endsWith('.mdx'))
+    else if (repoFileData.name.endsWith('.md') || repoFileData.name.endsWith('.mdx'))
     {
         return <MarkdownCodeBlock codeString={repoFileData.data!} />
     }

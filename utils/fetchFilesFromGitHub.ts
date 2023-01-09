@@ -43,7 +43,7 @@ const fetchHelper = async ({ url, payload }: FetchHelperProps) =>
         if (file.type === 'dir')
         {
             await fetchHelper({
-                url: `${url}/${file.path}`,
+                url: `${process.env.GITHUB_URL!}/${file.path}`,
                 payload: fileData.children = [],
             })
         }
