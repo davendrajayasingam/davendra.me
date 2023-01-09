@@ -1,8 +1,9 @@
 'use client'
 
-import Sidebar from '@/app/Sidebar'
-import AutoCodeBlock from '@/app/code-blocks/AutoCodeBlock'
 import { useState } from 'react'
+
+import Sidebar from '@/app/Sidebar'
+import CodeBlock from '@/app/CodeBlock'
 
 type Props = {
     repoData: Array<RepoFileData>
@@ -14,16 +15,19 @@ const Homepage = ({ repoData }: Props) =>
 
     return (
         <main className='flex flex-row space-x-2'>
+
             <Sidebar
                 repoData={repoData}
                 onClick={data => setSelectedFileData(data)}
                 className='max-w-xs'
             />
-            <div className='flex-1'>
-                <AutoCodeBlock
+
+            <div className='flex-1 overflow-scroll'>
+                <CodeBlock
                     repoFileData={selectedFileData}
                 />
             </div>
+
         </main>
     )
 }
