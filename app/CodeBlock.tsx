@@ -2,17 +2,15 @@
 
 import { PrismLight as SyntaxHighlighter } from 'react-syntax-highlighter'
 import { coldarkDark } from 'react-syntax-highlighter/dist/esm/styles/prism'
-import
-{
-    javascript,
-    jsx,
-    typescript,
-    tsx,
-    markdown,
-    css,
-    json,
-    ignore,
-} from 'react-syntax-highlighter/dist/esm/languages/prism'
+
+import javascript from 'react-syntax-highlighter/dist/esm/languages/prism/javascript'
+import jsx from 'react-syntax-highlighter/dist/esm/languages/prism/jsx'
+import typescript from 'react-syntax-highlighter/dist/esm/languages/prism/typescript'
+import tsx from 'react-syntax-highlighter/dist/esm/languages/prism/tsx'
+import markdown from 'react-syntax-highlighter/dist/esm/languages/prism/markdown'
+import css from 'react-syntax-highlighter/dist/esm/languages/prism/css'
+import json from 'react-syntax-highlighter/dist/esm/languages/prism/json'
+import ignore from 'react-syntax-highlighter/dist/esm/languages/prism/ignore'
 
 SyntaxHighlighter.registerLanguage('javascript', javascript)
 SyntaxHighlighter.registerLanguage('jsx', jsx)
