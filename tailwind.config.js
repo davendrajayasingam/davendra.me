@@ -9,7 +9,11 @@ module.exports = {
     extend: {
       colors: {
         theme: {
-          primary: '#1d4486',
+          primary: '#111b27',
+          text: '#e3eaf2',
+        },
+        sidebar: {
+          foreground: '#e3eaf2',
         },
       },
       fontFamily: {

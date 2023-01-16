@@ -1,15 +1,17 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { RxChevronDown, RxChevronRight } from 'react-icons/rx'
+import { IoChevronDownOutline, IoChevronForwardOutline } from 'react-icons/io5'
+import { Transition } from '@headlessui/react'
 
 type Props = {
+    isShowing: boolean,
     repoData: RepoFileData[],
     onClick: (file: RepoFileData) => void,
     className?: string,
 }
 
-const Sidebar = ({ repoData, onClick, className }: Props) =>
+const Sidebar = ({ isShowing, repoData, onClick, className }: Props) =>
 {
     const defaultExpandedFolderState: { [field: string]: boolean } = {
         all: true, // root directory
@@ -56,8 +58,8 @@ const Sidebar = ({ repoData, onClick, className }: Props) =>
                 {
                     file.type === 'dir'
                     && (expandedFolderState[file.path]
-                        ? <RxChevronDown />
-                        : <RxChevronRight />)
+                        ? <IoChevronDownOutline />
+                        : <IoChevronForwardOutline />)
                 }
                 <span>{file.name}</span>
 
@@ -71,30 +73,40 @@ const Sidebar = ({ repoData, onClick, className }: Props) =>
     )
 
     return (
-        <aside>
+        <Transition
+            show={isShowing}
+            enter="transition ease-in-out duration-150 transform"
+            enterFrom="-translate-x-full"
+            enterTo="translate-x-0"
+            leave="transition ease-in-out duration-150 transform"
+            leaveFrom="translate-x-0"
+            leaveTo="-translate-x-full"
+        >
+            <aside>
 
-            <p>EXPLORER</p>
+                <p>EXPLORER</p>
 
-            <button
-                type='button'
-                className='flex items-center space-x-1'
-                onClick={() => setExpandedFolderState({ ...expandedFolderState, all: !expandedFolderState.all })}
-            >
+                <button
+                    type='button'
+                    className='flex items-center space-x-1'
+                    onClick={() => setExpandedFolderState({ ...expandedFolderState, all: !expandedFolderState.all })}
+                >
+                    {
+                        expandedFolderState.all
+                            ? <IoChevronDownOutline />
+                            : <IoChevronForwardOutline />
+                    }
+                    <span>DAVENDRA.ME</span>
+                </button>
+
                 {
                     expandedFolderState.all
-                        ? <RxChevronDown />
-                        : <RxChevronRight />
+                    && repoData.map(file => recursiveFolderButtonHelper(file))
                 }
-                <span>DAVENDRA.ME</span>
-            </button>
-
-            {
-                expandedFolderState.all
-                && repoData.map(file => recursiveFolderButtonHelper(file))
-            }
 
 
-        </aside>
+            </aside>
+        </Transition>
     )
 }
 
