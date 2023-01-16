@@ -1,30 +1,50 @@
-import
+import 
 {
-    IoChevronBackOutline,
-    IoMenuOutline,
-} from 'react-icons/io5'
+    VscComment,
+    VscFilePdf,
+    VscFiles,
+    VscHome,
+} from 'react-icons/vsc'
+
+import { classNames } from '@/utils/helperFunctions'
 
 type Props = {
-    sidebarIsOpen: boolean,
-    onToggleSidebar: () => void,
+    selectedTab: ActivityBarTab,
+    onChangeTab: (tab: ActivityBarTab) => void,
 }
 
-const ActivityBar = ({ sidebarIsOpen, onToggleSidebar }: Props) =>
+const ActivityBar = ({ selectedTab, onChangeTab }: Props) =>
 {
-    return (
-        <nav className='p-4 flex flex-col space-y-4 bg-theme-primary z-50'>
+    const displayActivityBarButtonHelper = (tab: ActivityBarTab, Icon: React.ElementType) =>
+    (
+        <button
+            type='button'
+            className={classNames(
+                'flex items-center justify-center w-full h-full px-2 py-4 focus:outline-none',
+                selectedTab === tab ? 'border-b-2 sm:border-b-0 sm:border-l-2 border-theme-activityBar.foreground' : '',
+            )}
+            onClick={() => onChangeTab(tab)}
+        >
+            <Icon className='text-4xl text-theme-activityBar.foreground' />
+        </button>
+    )
 
-            <button
-                type='button'
-                className='focus:outline-none'
-                onClick={onToggleSidebar}
-            >
-                {
-                    sidebarIsOpen
-                        ? <IoChevronBackOutline className='text-4xl' />
-                        : <IoMenuOutline className='text-4xl' />
-                }
-            </button>
+    return (
+        <nav className={classNames(
+            'flex items-center w-full h-full',
+            'flex-row justify-evenly',
+            'md:flex-col md:justify-start md:min-h-screen',
+            'border-r-2 border-theme-activityBar.border',
+            'bg-theme-activityBar.background',
+        )}>
+
+            {displayActivityBarButtonHelper('home', VscHome)}
+
+            {displayActivityBarButtonHelper('explorer', VscFiles)}
+
+            {displayActivityBarButtonHelper('resume', VscFilePdf)}
+
+            {displayActivityBarButtonHelper('contact', VscComment)}
 
         </nav>
     )

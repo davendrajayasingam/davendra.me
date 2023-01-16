@@ -1,5 +1,6 @@
 'use client'
 
+import { useEffect } from 'react'
 import { PrismLight as SyntaxHighlighter } from 'react-syntax-highlighter'
 import { coldarkDark } from 'react-syntax-highlighter/dist/esm/styles/prism'
 
@@ -23,12 +24,18 @@ SyntaxHighlighter.registerLanguage('ignore', ignore)
 
 type Props = {
     repoFileData: RepoFileData,
+    className?: string,
 }
 
-const CodeBlock = ({ repoFileData }: Props) =>
+const CodeBlock = ({ repoFileData, className }: Props) =>
 {
     const fileExtension = repoFileData.name.split('.').pop()
     const codeString = repoFileData.data!
+
+    useEffect(() =>
+    {
+        window.scrollTo({ top: 0, behavior: 'smooth' })
+    }, [repoFileData])
 
     const getLanguage = (extension: string) =>
     {
@@ -57,13 +64,19 @@ const CodeBlock = ({ repoFileData }: Props) =>
         }
     }
 
-    return <SyntaxHighlighter
-        language={getLanguage(fileExtension!)}
-        style={coldarkDark}
-        showLineNumbers
-    >
-        {codeString}
-    </SyntaxHighlighter>
+    return <div className={className}>
+        <SyntaxHighlighter
+            language={getLanguage(fileExtension!)}
+            style={coldarkDark}
+            showLineNumbers
+            customStyle={{
+                margin: 0,
+                fontSize: '0.875rem',
+            }}
+        >
+            {codeString}
+        </SyntaxHighlighter>
+    </div>
 }
 
 export default CodeBlock

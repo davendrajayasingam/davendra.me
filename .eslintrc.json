@@ -42,6 +42,10 @@
       "error",
       "single"
     ],
+    "jsx-quotes": [
+      "error",
+      "prefer-single"
+    ],
     // var fullHeight = borderTop
     //                + innerHeight
     //                + borderBottom;

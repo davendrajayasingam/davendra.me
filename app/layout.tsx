@@ -1,5 +1,4 @@
 import './globals.css'
-
 import { AnalyticsWrapper } from '@/app/Analytics'
 
 type Props = {
@@ -9,9 +8,9 @@ type Props = {
 export default function RootLayout({ children }: Props)
 {
   return (
-    <html lang="en">
+    <html lang='en'>
       <head />
-      <body className='font-sans bg-theme-primary text-theme-text'>
+      <body className='font-sans'>
         {children}
         <AnalyticsWrapper />
       </body>

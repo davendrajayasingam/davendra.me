@@ -3,6 +3,8 @@ type FetchHelperProps = {
     payload: Array<RepoFileData>,
 }
 
+const excludeFromDownload = ['ttf']
+
 const fetchHelper = async ({ url, payload }: FetchHelperProps) =>
 {
     const res = await fetch(url,
@@ -33,8 +35,15 @@ const fetchHelper = async ({ url, payload }: FetchHelperProps) =>
 
     for (const file of res)
     {
+        // package-lock.json takes too long to render. skip it
+        if (file.name === 'package-lock.json')
+        {
+            continue
+        }
+
         const fileData: RepoFileData = {
             name: file.name,
+            extension: file.name.split('.').pop(),
             path: file.path,
             type: file.type,
         }
@@ -49,6 +58,11 @@ const fetchHelper = async ({ url, payload }: FetchHelperProps) =>
         }
         else
         {
+            // skip downloading files that are not needed
+            if (excludeFromDownload.includes(fileData.extension))
+            {
+                continue
+            }
             fileData.data = await fetch(file.download_url).then(res => res.text())
         }
 

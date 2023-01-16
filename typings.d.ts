@@ -1,5 +1,6 @@
 type RepoFileData = {
     name: string,
+    extension: string,
     path: string,
     type: 'dir' | 'file',
     /**
@@ -11,3 +12,5 @@ type RepoFileData = {
      */
     children?: RepoFileData[],
 }
+
+type ActivityBarTab = 'home' | 'explorer' | 'resume' | 'contact'

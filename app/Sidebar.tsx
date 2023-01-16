@@ -1,28 +1,37 @@
-'use client'
-
 import { useEffect, useState } from 'react'
-import { IoChevronDownOutline, IoChevronForwardOutline } from 'react-icons/io5'
 import { Transition } from '@headlessui/react'
+import { VscChevronDown, VscChevronRight } from 'react-icons/vsc'
+
+import { classNames } from '@/utils/helperFunctions'
+import FileExtensionIcon from '@/app/FileExtensionIcon'
 
 type Props = {
+    selectedFile: RepoFileData,
+    onSelectFile: (file: RepoFileData) => void,
     isShowing: boolean,
     repoData: RepoFileData[],
-    onClick: (file: RepoFileData) => void,
     className?: string,
 }
 
-const Sidebar = ({ isShowing, repoData, onClick, className }: Props) =>
+type SectionHeaderProps = {
+    sectionName: string,
+    isExpanded: boolean,
+    onClick: () => void,
+}
+
+const Sidebar = ({ selectedFile, onSelectFile, isShowing, repoData, className }: Props) =>
 {
-    const defaultExpandedFolderState: { [field: string]: boolean } = {
-        all: true, // root directory
+    const defaultExpandedState: { [field: string]: boolean } = {
+        openEditors: true,
+        projectFiles: true, // root directory
     }
 
     // to know which directories/folders are expanded
-    const [expandedFolderState, setExpandedFolderState] = useState(defaultExpandedFolderState)
+    const [expandedState, setExpandedState] = useState(defaultExpandedState)
 
     useEffect(() =>
     {
-        const updatedExpandedState = { ...defaultExpandedFolderState }
+        const updatedExpandedState = { ...defaultExpandedState }
 
         for (const file of repoData)
         {
@@ -32,78 +41,119 @@ const Sidebar = ({ isShowing, repoData, onClick, className }: Props) =>
             }
         }
 
-        setExpandedFolderState(updatedExpandedState)
+        setExpandedState(updatedExpandedState)
     }, [repoData])
 
-    const recursiveFolderButtonHelper = (file: RepoFileData) => (
-        <div
-            key={file.path}
-            className={className || ''}
-        >
+    const displayProjectFilesRecursively = (file: RepoFileData, depth: number = 0) => (
+        <div key={file.path}>
             <button
                 type='button'
-                className='flex items-center space-x-1'
+                className={classNames(
+                    'py-0.5 flex items-center space-x-1 w-full',
+                    'hover:bg-theme-list.hoverBackground',
+                    'border',
+                    selectedFile.path === file.path ? 'border-theme-list.highlightForeground bg-theme-list.hoverBackground' : 'border-transparent',
+                    'focus:outline-none',
+                )}
                 onClick={() =>
                 {
                     if (file.type === 'dir')
                     {
-                        setExpandedFolderState({ ...expandedFolderState, [file.path]: !expandedFolderState[file.path] })
+                        setExpandedState({ ...expandedState, [file.path]: !expandedState[file.path] })
                     }
                     else
                     {
-                        onClick(file)
+                        onSelectFile(file)
                     }
                 }}
             >
+                {/* hack so we can get the hover to cover the entire width without the padding blocking it */}
+                <span style={{ width: `${1 + depth * 0.75}rem` }} />
                 {
                     file.type === 'dir'
-                    && (expandedFolderState[file.path]
-                        ? <IoChevronDownOutline />
-                        : <IoChevronForwardOutline />)
+                    && (expandedState[file.path]
+                        ? <VscChevronDown className='text-xl text-theme-sideBar.foreground' />
+                        : <VscChevronRight className='text-xl text-theme-sideBar.foreground' />)
                 }
-                <span>{file.name}</span>
-
+                <span className='flex flex-row items-center space-x-1 text-theme-sideBar.foreground'>
+                    <FileExtensionIcon extension={file.extension} />
+                    <span>{file.name}</span>
+                </span>
             </button>
+
             {
                 file.type === 'dir'
-                && expandedFolderState[file.path]
-                && (file.children || []).map(child => recursiveFolderButtonHelper(child))
+                && expandedState[file.path]
+                && (file.children || []).map(child => displayProjectFilesRecursively(child, depth + 1))
             }
+
         </div>
+    )
+
+    const displaySectionHeader = ({ sectionName, isExpanded, onClick }: SectionHeaderProps) => (
+        <button
+            type='button'
+            className={classNames(
+                'px-1 py-2 w-full',
+                'flex items-center',
+                'bg-theme-sideBarSectionHeader.background',
+                'border border-theme-sideBarSectionHeader.border',
+                'focus:outline-none',
+            )}
+            onClick={onClick}
+        >
+            {
+                isExpanded
+                    ? <VscChevronDown className='text-xl text-theme-sideBarSectionHeader.foreground' />
+                    : <VscChevronRight className='text-xl text-theme-sideBarSectionHeader.foreground' />
+            }
+            <span className='text-sm font-bold text-theme-sideBarSectionHeader.foreground'>
+                {sectionName}
+            </span>
+        </button>
     )
 
     return (
         <Transition
             show={isShowing}
-            enter="transition ease-in-out duration-150 transform"
-            enterFrom="-translate-x-full"
-            enterTo="translate-x-0"
-            leave="transition ease-in-out duration-150 transform"
-            leaveFrom="translate-x-0"
-            leaveTo="-translate-x-full"
+            enter='transition ease-in-out duration-150 transform'
+            enterFrom='-translate-x-full'
+            enterTo='translate-x-0'
+            leave='transition ease-in-out duration-150 transform'
+            leaveFrom='translate-x-0'
+            leaveTo='-translate-x-full'
         >
-            <aside>
+            <aside className={classNames(
+                className ? className : '',
+                'fixed inset-y-0 left-0 md:left-16 z-40',
+                'w-[320px] min-h-screen h-full overflow-scroll',
+                'bg-theme-sideBar.background border-r border-theme-sideBar.border',
+            )}>
 
-                <p>EXPLORER</p>
+                {/* Side bar title */}
+                <div className='px-7 py-3'>
+                    <p className='text-sm text-theme-sideBarTitle.foreground'>
+                        EXPLORER
+                    </p>
+                </div>
 
-                <button
-                    type='button'
-                    className='flex items-center space-x-1'
-                    onClick={() => setExpandedFolderState({ ...expandedFolderState, all: !expandedFolderState.all })}
-                >
-                    {
-                        expandedFolderState.all
-                            ? <IoChevronDownOutline />
-                            : <IoChevronForwardOutline />
-                    }
-                    <span>DAVENDRA.ME</span>
-                </button>
+                {/* Open editors section header */}
+                {displaySectionHeader({
+                    sectionName: 'OPEN EDITORS',
+                    isExpanded: expandedState.openEditors,
+                    onClick: () => setExpandedState({ ...expandedState, openEditors: !expandedState.openEditors }),
+                })}
 
-                {
-                    expandedFolderState.all
-                    && repoData.map(file => recursiveFolderButtonHelper(file))
-                }
+                {/* Project files section header */}
+                {displaySectionHeader({
+                    sectionName: 'DAVENDRA.ME',
+                    isExpanded: expandedState.projectFiles,
+                    onClick: () => setExpandedState({ ...expandedState, projectFiles: !expandedState.projectFiles }),
+                })}
 
+                {/* Project files contents */}
+                {expandedState.projectFiles
+                    && repoData.map(file => displayProjectFilesRecursively(file))}
 
             </aside>
         </Transition>
