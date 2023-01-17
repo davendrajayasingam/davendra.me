@@ -29,8 +29,8 @@ type Props = {
 
 const CodeBlock = ({ repoFileData, className }: Props) =>
 {
-    const fileExtension = repoFileData.name.split('.').pop()
-    const codeString = repoFileData.data!
+    const fileExtension = repoFileData?.name?.split('.')?.pop() || ''
+    const codeString = repoFileData?.data
 
     useEffect(() =>
     {
@@ -64,6 +64,11 @@ const CodeBlock = ({ repoFileData, className }: Props) =>
         }
     }
 
+    if (!codeString)
+    {
+        return <></>
+    }
+
     return <div className={className}>
         <SyntaxHighlighter
             language={getLanguage(fileExtension!)}
@@ -71,6 +76,7 @@ const CodeBlock = ({ repoFileData, className }: Props) =>
             showLineNumbers
             customStyle={{
                 margin: 0,
+                padding: '0.25rem 0.5rem',
                 fontSize: '0.875rem',
             }}
         >

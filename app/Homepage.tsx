@@ -9,6 +9,7 @@ import Contact from '@/app/Contact'
 import Resume from '@/app/Resume'
 import Sidebar from '@/app/Sidebar'
 import Tabs from '@/app/Tabs'
+import Breadcrumbs from './Breadcrumbs'
 
 type Props = {
     repoData: Array<RepoFileData>
@@ -23,6 +24,18 @@ const Homepage = ({ repoData }: Props) =>
     const [selectedActivityBarTab, setSelectedActivityBarTab] = useState<ActivityBarTab>('home')
 
     const [openTabs, setOpenTabs] = useState<Array<RepoFileData>>([defaultOpenFile])
+
+    const handleCloseEditor = (data: RepoFileData) =>
+    {
+        // If the tab being closed is the active tab, set the active tab to the previous tab
+        if (selectedFileData.path === data.path)
+        {
+            const dataIdx = openTabs.findIndex(tab => tab.path === data.path)
+            const newActiveTab = openTabs[dataIdx - 1] || openTabs[dataIdx + 1]
+            setSelectedFileData(newActiveTab)
+        }
+        setOpenTabs(openTabs.filter(tab => tab.path !== data.path))
+    }
 
     return (
         <main>
@@ -57,34 +70,36 @@ const Homepage = ({ repoData }: Props) =>
                                 }
                                 setSelectedFileData(data)
                             }}
+                            openEditors={openTabs}
+                            onCloseEditor={data => handleCloseEditor(data)}
                         />
                         <div className='flex-1 ml-[320px]'>
-                            <Tabs
-                                activeTab={selectedFileData}
-                                openTabs={openTabs}
-                                onChangeTab={data => setSelectedFileData(data)}
-                                onCloseTab={data =>
-                                {
-                                    // If the tab being closed is the active tab, set the active tab to the previous tab
-                                    if (selectedFileData.path === data.path)
-                                    {
-                                        const dataIdx = openTabs.findIndex(tab => tab.path === data.path)
-                                        const newActiveTab = openTabs[dataIdx - 1] || openTabs[dataIdx + 1]
-                                        setSelectedFileData(newActiveTab)
-                                    }
-                                    setOpenTabs(openTabs.filter(tab => tab.path !== data.path))
-                                }}
-                            />
+                            {
+                                openTabs?.[0]
+                                && <Tabs
+                                    activeTab={selectedFileData}
+                                    openTabs={openTabs}
+                                    onChangeTab={data => setSelectedFileData(data)}
+                                    onCloseTab={data => handleCloseEditor(data)}
+                                />
+                            }
+                            {
+                                selectedFileData
+                                && <Breadcrumbs
+                                    activeTab={selectedFileData}
+                                    className='fixed top-11'
+                                />
+                            }
                             <CodeBlock
                                 repoFileData={selectedFileData}
-                                className='overflow-scroll mt-14'
+                                className='overflow-scroll mt-20'
                             />
                         </div>
                     </div>
                 }
             </div>
 
-        </main>
+        </main >
     )
 }
 

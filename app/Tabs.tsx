@@ -1,4 +1,5 @@
 import { VscClose } from 'react-icons/vsc'
+import { useEffect, useRef } from 'react'
 
 import FileExtensionIcon from '@/app/FileExtensionIcon'
 import { classNames } from '@/utils/helperFunctions'
@@ -12,13 +13,28 @@ type Props = {
 
 const Tabs = ({ activeTab, openTabs, onChangeTab, onCloseTab }: Props) =>
 {
+    const tabsParentRef = useRef<HTMLDivElement>(null)
+
+    useEffect(() =>
+    {
+        const idxOfOpenTab = openTabs.findIndex(tab => tab.path === activeTab.path)
+        if (idxOfOpenTab >= 0)
+        {
+            tabsParentRef.current?.children[idxOfOpenTab].scrollIntoView()
+        }
+    }, [activeTab])
+
     return (
         <div className='fixed top-0 left-[384px] right-0 z-50 bg-theme-editor.background'>
-            <div className={classNames(
-                'flex flex-row w-full overflow-x-scroll',
-                'bg-theme-editorGroupHeader.tabsBackground',
-                'border-y border-theme-editorGroupHeader.tabsBorder',
-            )}>
+            <div
+                ref={tabsParentRef}
+                className={classNames(
+                    'flex flex-row w-full',
+                    'overflow-x-scroll custom-scrollbar',
+                    'bg-theme-editorGroupHeader.tabsBackground',
+                    'border-y border-theme-editorGroupHeader.tabsBorder',
+                )}
+            >
                 {
                     openTabs.map(tab => (
                         <button
