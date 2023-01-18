@@ -13,4 +13,4 @@ type RepoFileData = {
     children?: RepoFileData[],
 }
 
-type ActivityBarTab = 'home' | 'explorer' | 'resume' | 'contact'
+type ActivityBarTab = 'home' | 'code' | 'resume' | 'contact'

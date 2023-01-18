@@ -1,105 +1,99 @@
-'use client'
+import Image from 'next/image'
+import Link from 'next/link'
+import { VscCode, VscMail, VscFilePdf, VscFiles, VscLinkExternal } from 'react-icons/vsc'
 
-import { useState } from 'react'
+import { buttonClassName, classNames } from '@/utils/helperFunctions'
+import Iconify from '@/utils/Iconify'
 
-import About from '@/app/About'
-import ActivityBar from '@/app/ActivityBar'
-import CodeBlock from '@/app/CodeBlock'
-import Contact from '@/app/Contact'
-import Resume from '@/app/Resume'
-import Sidebar from '@/app/Sidebar'
-import Tabs from '@/app/Tabs'
-import Breadcrumbs from './Breadcrumbs'
-
-type Props = {
-    repoData: Array<RepoFileData>
-}
-
-const Homepage = ({ repoData }: Props) =>
+const Homepage = () =>
 {
-    const defaultOpenFile = repoData.find(file => file.name === 'README.md')!
-
-    const [selectedFileData, setSelectedFileData] = useState<RepoFileData>(defaultOpenFile)
-
-    const [selectedActivityBarTab, setSelectedActivityBarTab] = useState<ActivityBarTab>('home')
-
-    const [openTabs, setOpenTabs] = useState<Array<RepoFileData>>([defaultOpenFile])
-
-    const handleCloseEditor = (data: RepoFileData) =>
-    {
-        // If the tab being closed is the active tab, set the active tab to the previous tab
-        if (selectedFileData.path === data.path)
-        {
-            const dataIdx = openTabs.findIndex(tab => tab.path === data.path)
-            const newActiveTab = openTabs[dataIdx - 1] || openTabs[dataIdx + 1]
-            setSelectedFileData(newActiveTab)
-        }
-        setOpenTabs(openTabs.filter(tab => tab.path !== data.path))
-    }
-
     return (
-        <main>
+        <div className={classNames(
+            'w-screen max-w-screen-lg mx-auto p-4',
+            'flex flex-col items-center space-y-4',
+            'md:flex-row md:items-start md:space-y-0 md:space-x-4'
+        )}>
 
-            <div className='fixed bottom-0 inset-x-0 z-50 h-16 md:h-auto md:left-0 md:w-16'>
-                <ActivityBar
-                    selectedTab={selectedActivityBarTab}
-                    onChangeTab={tab => setSelectedActivityBarTab(tab)}
-                />
+            <Image
+                src='/images/davendra.png'
+                alt='Davendra Jayasingam'
+                className='object-contain aspect-square'
+                width={256}
+                height={256}
+            />
+
+            <div className='flex flex-col items-center md:items-start space-y-4'>
+
+                <h1 className='text-center md:text-left font-medium text-4xl text-theme-editor.foreground'>
+                    Davendra Jayasingam
+                </h1>
+
+                <p className={classNames(
+                    'flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-4',
+                    'font-medium text-lg text-theme-editor.foreground',
+                )}>
+                    <span className='flex items-center space-x-1'>
+                        <VscCode className='text-3xl text-theme-editorHint.foreground' />
+                        <span>Full Stack Web Developer</span>
+                    </span>
+                    <span className='hidden sm:block'>|</span>
+                    <span className='flex items-center space-x-1'>
+                        <Iconify icon='openmoji:flag-malaysia' className='text-3xl' />
+                        <span>Malaysia</span>
+                    </span>
+                </p>
+
+                <p className='text-center md:text-left text-theme-editor.foreground'>
+                    I help brands increase customer engagement via gamification and web applications. I am currently working as a Lead Web Developer at
+                    &nbsp;
+                    <a
+                        href='https://sixides.com'
+                        target='_blank'
+                        rel='noopener noreferrer'
+                        className='inline-flex items-center space-x-1 text-theme-textLink.foreground'
+                    >
+                        <span>SIXiDES</span>
+                        <VscLinkExternal className='inline ml-1' />
+                    </a>
+                    &nbsp;
+                    and I am also a freelance web developer.
+                </p>
+
+                <div className='grid sm:grid-cols-3 gap-4'>
+
+                    <Link
+                        href='/code'
+                        className={buttonClassName}
+                    >
+                        <VscFiles className='text-2xl' />
+                        <span>Code</span>
+                    </Link>
+
+                    <Link
+                        href='/resume'
+                        className={buttonClassName}
+                    >
+                        <VscFilePdf className='text-2xl' />
+                        <span>Resume</span>
+                    </Link>
+
+                    <Link
+                        href='/contact'
+                        className={buttonClassName}
+                    >
+                        <VscMail className='text-2xl' />
+                        <span>Contact</span>
+                    </Link>
+
+                </div>
+
+                <p className='font-light text-xs text-center md:text-left text-theme-editor.foreground'>
+                    01100011 01101111 01101110 01110100 01100001 01100011 01110100 01000000 01100100 01100001 01110110 01100101 01101110 01100100 01110010 01100001 00101110 01101101 01100101
+                </p>
+
             </div>
 
-            <div className='pb-16 md:pb-0 md:ml-16'>
-
-                {selectedActivityBarTab === 'home' && <About />}
-
-                {selectedActivityBarTab === 'resume' && <Resume />}
-
-                {selectedActivityBarTab === 'contact' && <Contact />}
-
-                {
-                    selectedActivityBarTab === 'explorer'
-                    && <div className='flex flex-row'>
-                        <Sidebar
-                            isShowing={selectedActivityBarTab === 'explorer'}
-                            repoData={repoData}
-                            selectedFile={selectedFileData}
-                            onSelectFile={data =>
-                            {
-                                if (!openTabs.find(tab => tab.path === data.path))
-                                {
-                                    setOpenTabs([data, ...openTabs])
-                                }
-                                setSelectedFileData(data)
-                            }}
-                            openEditors={openTabs}
-                            onCloseEditor={data => handleCloseEditor(data)}
-                        />
-                        <div className='flex-1 ml-[320px]'>
-                            {
-                                openTabs?.[0]
-                                && <Tabs
-                                    activeTab={selectedFileData}
-                                    openTabs={openTabs}
-                                    onChangeTab={data => setSelectedFileData(data)}
-                                    onCloseTab={data => handleCloseEditor(data)}
-                                />
-                            }
-                            {
-                                selectedFileData
-                                && <Breadcrumbs
-                                    activeTab={selectedFileData}
-                                    className='fixed top-11'
-                                />
-                            }
-                            <CodeBlock
-                                repoFileData={selectedFileData}
-                                className='overflow-scroll mt-20'
-                            />
-                        </div>
-                    </div>
-                }
-            </div>
-
-        </main >
+        </div>
     )
 }
 

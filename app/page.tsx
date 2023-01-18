@@ -1,9 +1,6 @@
-import fetchFilesFromGitHub from '@/utils/fetchFilesFromGitHub'
 import Homepage from '@/app/Homepage'
 
-export default async function Home()
+export default async function Page()
 {
-  const repoData = await fetchFilesFromGitHub()
-
-  return <Homepage repoData={repoData} />
+  return <Homepage />
 }
