@@ -6,7 +6,8 @@ import ActivityBar from '@/app/ActivityBar'
 import CodeBlock from '@/app/code/CodeBlock'
 import Sidebar from '@/app/code/Sidebar'
 import Tabs from '@/app/code/Tabs'
-import Breadcrumbs from './Breadcrumbs'
+import Breadcrumbs from '@/app/code/Breadcrumbs'
+import ImageBlock from '@/app/code/ImageBlock'
 
 type Props = {
     repoData: Array<RepoFileData>
@@ -54,7 +55,7 @@ const CodePage = ({ repoData }: Props) =>
                     onCloseEditor={data => handleCloseEditor(data)}
                 />
 
-                <div className='flex-1 ml-[320px]'>
+                <div className='flex-1 ml-64'>
 
                     {
                         openTabs?.[0]
@@ -70,14 +71,17 @@ const CodePage = ({ repoData }: Props) =>
                         selectedFileData
                         && <Breadcrumbs
                             activeTab={selectedFileData}
-                            className='fixed top-11'
+                            className='fixed top-12'
                         />
                     }
 
-                    <CodeBlock
-                        repoFileData={selectedFileData}
-                        className='overflow-scroll mt-20'
-                    />
+                    <div className='overflow-scroll mt-24'>
+                        {
+                            ['png', 'jpg', 'jpeg', 'ico'].includes(selectedFileData.extension)
+                                ? <ImageBlock src={selectedFileData.url} />
+                                : <CodeBlock repoFileData={selectedFileData} />
+                        }
+                    </div>
 
                 </div>
 

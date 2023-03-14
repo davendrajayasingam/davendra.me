@@ -2,6 +2,7 @@ type RepoFileData = {
     name: string,
     extension: string,
     path: string,
+    url: string,
     type: 'dir' | 'file',
     /**
      * Only present if type is 'file'
@@ -14,3 +15,4 @@ type RepoFileData = {
 }
 
 type ActivityBarTab = 'home' | 'code' | 'resume' | 'contact'
+type SocialSites = 'LinkedIn' | 'Instagram' | 'Facebook'

@@ -29,6 +29,7 @@ type Props = {
 
 const CodeBlock = ({ repoFileData, className }: Props) =>
 {
+    console.log(repoFileData)
     const fileExtension = repoFileData?.name?.split('.')?.pop() || ''
     const codeString = repoFileData?.data
 

@@ -3,7 +3,7 @@ type FetchHelperProps = {
     payload: Array<RepoFileData>,
 }
 
-const excludeFromDownload = ['ttf']
+const excludeFromDownload = ['ttf', 'png', 'jpg']
 
 const fetchHelper = async ({ url, payload }: FetchHelperProps) =>
 {
@@ -44,9 +44,11 @@ const fetchHelper = async ({ url, payload }: FetchHelperProps) =>
         const fileData: RepoFileData = {
             name: file.name,
             extension: file.name.split('.').pop(),
+            url: file.download_url,
             path: file.path,
             type: file.type,
         }
+        console.log(fileData)
 
         // if it's a directory, fetch the files inside it
         if (file.type === 'dir')
@@ -59,11 +61,10 @@ const fetchHelper = async ({ url, payload }: FetchHelperProps) =>
         else
         {
             // skip downloading files that are not needed
-            if (excludeFromDownload.includes(fileData.extension))
+            if (!excludeFromDownload.includes(fileData.extension))
             {
-                continue
+                fileData.data = await fetch(file.download_url).then(res => res.text())
             }
-            fileData.data = await fetch(file.download_url).then(res => res.text())
         }
 
         payload.push(fileData)
