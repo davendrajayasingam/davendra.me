@@ -10,11 +10,12 @@ export default function ResumePage()
 {
     const handleDownload = () =>
     {
-        const link = document.createElement('a')
-        link.href = '/documents/Davendra-Jayasingam-Resume.pdf'
-        link.target = '_blank'
-        link.rel = 'noopener noreferrer'
-        link.click()
+        const a = document.createElement('a')
+        document.body.appendChild(a)
+        a.download = 'Davendra Jayasingam Résumé.pdf'
+        a.href = '/documents/Davendra-Jayasingam-Resume.pdf'
+        a.click()
+        document.body.removeChild(a)
     }
 
     return (
