@@ -22,7 +22,7 @@ export default function ResumePage()
 
             <div className='p-4 flex flex-col space-y-8 items-center'>
 
-                <h1 className='font-medium text-4xl text-theme-editorLink.activeForeground'>
+                <h1 className='font-medium text-4xl text-theme-editor.foreground'>
                     My Résumé
                 </h1>
 
