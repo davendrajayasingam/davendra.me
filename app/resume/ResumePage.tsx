@@ -15,7 +15,6 @@ export default function ResumePage()
         a.download = 'Davendra Jayasingam Résumé.pdf'
         a.href = '/documents/Davendra-Jayasingam-Resume.pdf'
         a.click()
-        document.body.removeChild(a)
     }
 
     return (
