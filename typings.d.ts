@@ -15,4 +15,5 @@ type RepoFileData = {
 }
 
 type ActivityBarTab = 'home' | 'code' | 'resume' | 'contact'
+
 type SocialSites = 'LinkedIn' | 'Instagram' | 'Facebook'
