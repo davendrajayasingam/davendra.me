@@ -58,8 +58,7 @@ const HomepageIntroduction = () =>
                 >
                     contact page
                 </Link>
-                &nbsp;
-                or by sending me a message on WhatsApp. I would love to connect with you! Now where did I place my contact number? 🤔
+                . I would love to connect with you!
                 <br />
                 <br />
                 Interesting tidbit: I have a background in video game development.

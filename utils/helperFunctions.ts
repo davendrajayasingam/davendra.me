@@ -8,6 +8,6 @@ export const buttonClassName = classNames(
     'flex items-center justify-center space-x-1',
     'bg-theme-button.background hover:bg-theme-button.hoverBackground',
     'font-medium text-theme-button.foreground',
-    'transition-colors duration-200 ease-in-out',
+    'transition-colors duration-500 ease-in-out',
     'focus:outline-none',
 )

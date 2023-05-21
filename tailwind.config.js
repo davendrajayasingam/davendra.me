@@ -3,7 +3,7 @@ module.exports = {
   content: [
     './app/**/*.{js,ts,jsx,tsx}',
     './pages/**/*.{js,ts,jsx,tsx}',
-    './utils/**/*.{js,ts,jsx,tsx}',
+    './utils/**/*.{js,ts,jsx,tsx}'
   ],
   theme: {
     extend: {
@@ -449,14 +449,24 @@ module.exports = {
           'walkThrough.embeddedEditorBackground': '#213043',
           'widget.shadow': '#0b121b',
           'window.activeBorder': '#0b121b',
-          'window.inactiveBorder': '#0b121b7a',
+          'window.inactiveBorder': '#0b121b7a'
         },
+        'glitch': {
+          'primary': '#ffd319',
+          'secondary': '#f222ff',
+          // https://www.pinterest.com/pin/442126888412796915/
+          yellow: '#ffd319',
+          orange: '#ff901f',
+          red: '#ff2975',
+          pink: '#f222ff',
+          purple: '#8c1eff'
+        }
       },
       fontFamily: {
-      },
-    },
+      }
+    }
   },
   plugins: [
-    require('@tailwindcss/forms'),
-  ],
+    require('@tailwindcss/forms')
+  ]
 }
