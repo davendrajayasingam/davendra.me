@@ -11,42 +11,58 @@ const HomepageIntroduction = () =>
 
             <hr className='my-3 border-gray-50 border-opacity-30' />
 
-            <p className='text-lg'>
-                {'Hello 👋, I\'m Dave, and welcome to my personal site! 🙂'}
+            <p className='text-lg text-justify leading-relaxed'>
+                Welcome to my personal site! I'm truly delighted you stopped by. 🙂
                 <br />
                 <br />
-                {`
-                Most of my work involves creating websites, web applications, and 
-                microsites for contests and promotions. I also have experience with
-                gamification, and often incorporate hyper-casual games into campaigns.
-                `}
+                I've themed this site to mirror my true self, taking inspiration from Visual Studio Code, the software I use on a daily basis. I hope you find it enjoyable and engaging!
                 <br />
                 <br />
-                {`
-                The theme of this website is Visual Studio Code. It is the software
-                that I use on a daily basis as a programmer. You can browse all the 
-                code I wrote to create this site by clicking 
-                `}
+                While I possess versatility as a programmer, my true passion lies in the development of web platforms, dashboards, and microsites specifically tailored for contests and marketing campaigns. The thrill of crafting dynamic and engaging digital experiences that captivate users is what drives me forward.
+                <br />
+                <br />
+                While you're here, feel free to check out some of the
+                &nbsp;
+                <Link
+                    href='/projects'
+                    className='hover:underline text-theme-textLink.foreground'
+                >
+                    exciting projects
+                </Link>
+                &nbsp;
+                I've worked on, take a look at
+                &nbsp;
+                <Link
+                    href='/resume'
+                    className='hover:underline text-theme-textLink.foreground'
+                >
+                    my resume
+                </Link>
+                , or view the
+                &nbsp;
                 <Link
                     href='/code'
                     className='hover:underline text-theme-textLink.foreground'
                 >
-                    over here
+                    source code
                 </Link>
-                .
+                &nbsp;
+                of this website to gain insight into my strengths and coding style.
                 <br />
                 <br />
-                {`
-                I like meeting people, learning new things, and knowledge sharing.
-                Feel free to reach out to me on my contact page or by clicking
-                `}
+                If you have any inquiries regarding potential collaborations, questions, or feedback, please don't hesitate to reach out to me through my
+                &nbsp;
                 <Link
                     href='/contact'
                     className='hover:underline text-theme-textLink.foreground'
                 >
-                    over here
+                    contact page
                 </Link>
-                .
+                &nbsp;
+                or by sending me a message on WhatsApp. I would love to connect with you! Now where did I place my contact number? 🤔
+                <br />
+                <br />
+                Interesting tidbit: I have a background in video game development.
             </p>
         </div>
     )

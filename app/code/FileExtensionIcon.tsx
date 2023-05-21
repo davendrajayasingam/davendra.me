@@ -1,5 +1,5 @@
 // source: https://icon-sets.iconify.design/vscode-icons
-import Iconify from '@/utils/Iconify'
+import Iconify from '@/utils/components/Iconify'
 
 type Props = {
     extension: string

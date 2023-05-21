@@ -1,9 +1,9 @@
-import HomepageHeader from '@/app/HomepageHeader'
+import HomepageBanner from '@/app/HomepageBanner'
 import { classNames } from '@/utils/helperFunctions'
 import HomepageIntroduction from './HomepageIntroduction'
 import HomepageWorkExperience from './HomepageWorkExperience'
 import HomepageTechStack from './HomepageTechStack'
-import HomepageEducation from './HomepageEducation'
+import HomepageSkills from './HomepageSkills'
 
 const Homepage = () =>
 {
@@ -24,7 +24,7 @@ const Homepage = () =>
             'flex flex-col space-y-8',
         )}>
 
-            <HomepageHeader />
+            <HomepageBanner />
 
             {/* Menu */}
             <div>
@@ -39,7 +39,7 @@ const Homepage = () =>
 
             <div id={`${menuSelection[0]}`}>
                 <HomepageIntroduction />
-                <HomepageEducation />
+                <HomepageSkills />
             </div>
 
             <div id={`${menuSelection[1]}`}>

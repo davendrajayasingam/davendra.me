@@ -3,9 +3,9 @@ import Link from 'next/link'
 import { VscCode, VscMail, VscFilePdf, VscFiles, VscLinkExternal } from 'react-icons/vsc'
 
 import { buttonClassName, classNames } from '@/utils/helperFunctions'
-import Iconify from '@/utils/Iconify'
+import Iconify from '@/utils/components/Iconify'
 
-const HomepageHeader = () =>
+export default function HomepageBanner()
 {
     return (
         <div className={classNames(
@@ -41,8 +41,8 @@ const HomepageHeader = () =>
                     </span>
                 </p>
 
-                <p className='text-center md:text-left text-theme-editor.foreground'>
-                    {'I work with brands and creative agencies to bring marketing campaigns to life. I\'m currently a Lead Web Developer at'}
+                <p className='text-center md:text-left leading-relaxed text-theme-editor.foreground'>
+                    Hello! 👋 I'm Dave and I work with brands and event agencies to bring marketing campaigns to life. I'm currently a Lead Web Developer at
                     &nbsp;
                     <a
                         href='https://sixides.com'
@@ -52,9 +52,7 @@ const HomepageHeader = () =>
                     >
                         <span>SIXiDES</span>
                         <VscLinkExternal className='inline ml-1' />
-                    </a>
-                    &nbsp;
-                    {'and I\'m also a freelance developer.'}
+                    </a>.
                 </p>
 
                 <div className='grid sm:grid-cols-3 gap-4'>
@@ -86,12 +84,12 @@ const HomepageHeader = () =>
                 </div>
 
                 <p className='font-light text-xs text-center md:text-left text-theme-editor.foreground'>
-                    01101000 01110100 01110100 01110000 01110011 00111010 00101111 00101111 01100001 01110000 01101001 00101110 01110111 01101000 01100001 01110100 01110011 01100001 01110000 01110000 00101110 01100011 01101111 01101101 00101111 01110011 01100101 01101110 01100100 00111111 01110000 01101000 01101111 01101110 01100101 00111101 00110110 00110000 00110001 00110001 00110010 00110111 00110101 00110000 00110001 00110111 00110111 00111000
+                    Great Scott! It seems my code has taken a trip to the wrong timeline. Can you decipher this temporal anomaly?
+                    <br />
+                    01101000 01110100 01110100 01110000 01110011 00111010 00101111 00101111 01100100 01100001 01110110 01100101 01101110 01100100 01110010 01100001 00101110 01101101 01100101 00101111 01110011 01100101 01100011 01110010 01100101 01110100
                 </p>
 
             </div>
         </div>
     )
 }
-
-export default HomepageHeader
