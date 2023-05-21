@@ -30,7 +30,7 @@
     // }
     "comma-dangle": [
       "error",
-      "always-multiline"
+      "never"
     ],
     // enforces that files do not end with a newline
     "eol-last": [
@@ -59,6 +59,7 @@
     //   "error",
     //   "all"
     // ],
-    "react-hooks/exhaustive-deps": "warn"
+    "react-hooks/exhaustive-deps": "warn",
+    "react/no-unescaped-entities": "off"
   }
 }
