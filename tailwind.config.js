@@ -452,14 +452,13 @@ module.exports = {
           'window.inactiveBorder': '#0b121b7a'
         },
         'glitch': {
-          'primary': '#ffd319',
-          'secondary': '#f222ff',
           // https://www.pinterest.com/pin/442126888412796915/
           yellow: '#ffd319',
           orange: '#ff901f',
           red: '#ff2975',
           pink: '#f222ff',
-          purple: '#8c1eff'
+          purple: '#8c1eff',
+          green: '#a1be01'
         }
       },
       fontFamily: {

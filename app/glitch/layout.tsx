@@ -2,10 +2,11 @@ import '@/app/globals.css'
 
 import Image from 'next/image'
 
-import { AnalyticsWrapper } from '@/app/Analytics'
+import Analytics from '@/utils/components/Analytics'
 import ActivityBar from '@/app/ActivityBar'
 
 import imgGlitchBg from '@/public/images/glitch/bg.png'
+import ToastComponent from '@/utils/components/ToastComponent'
 
 type Props = {
   children: React.ReactNode
@@ -31,7 +32,8 @@ export default function RootLayout({ children }: Props)
             {children}
           </div>
         </main>
-        <AnalyticsWrapper />
+        <Analytics />
+        <ToastComponent />
       </body>
     </html>
   )

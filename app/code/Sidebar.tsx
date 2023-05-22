@@ -25,7 +25,7 @@ const Sidebar = ({ selectedFile, onSelectFile, repoData, openEditors, onCloseEdi
 {
     const defaultExpandedState: { [field: string]: boolean } = {
         openEditors: true,
-        projectFiles: true, // root directory
+        projectFiles: true // root directory
     }
 
     // to know which directories/folders are expanded
@@ -176,7 +176,7 @@ const Sidebar = ({ selectedFile, onSelectFile, repoData, openEditors, onCloseEdi
             {displaySectionHeader({
                 sectionName: 'OPEN EDITORS',
                 isExpanded: expandedState.openEditors,
-                onClick: () => setExpandedState({ ...expandedState, openEditors: !expandedState.openEditors }),
+                onClick: () => setExpandedState({ ...expandedState, openEditors: !expandedState.openEditors })
             })}
 
             <Transition
@@ -195,7 +195,7 @@ const Sidebar = ({ selectedFile, onSelectFile, repoData, openEditors, onCloseEdi
             {displaySectionHeader({
                 sectionName: 'DAVENDRA.ME',
                 isExpanded: expandedState.projectFiles,
-                onClick: () => setExpandedState({ ...expandedState, projectFiles: !expandedState.projectFiles }),
+                onClick: () => setExpandedState({ ...expandedState, projectFiles: !expandedState.projectFiles })
             })}
 
             {/* Project files contents */}

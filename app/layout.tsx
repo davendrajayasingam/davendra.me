@@ -1,6 +1,8 @@
 import '@/app/globals.css'
-import { AnalyticsWrapper } from '@/app/Analytics'
+
+import Analytics from '@/utils/components/Analytics'
 import ActivityBar from '@/app/ActivityBar'
+import ToastComponent from '@/utils/components/ToastComponent'
 
 type Props = {
   children: React.ReactNode
@@ -18,7 +20,8 @@ export default function RootLayout({ children }: Props)
             {children}
           </div>
         </main>
-        <AnalyticsWrapper />
+        <Analytics />
+        <ToastComponent />
       </body>
     </html>
   )

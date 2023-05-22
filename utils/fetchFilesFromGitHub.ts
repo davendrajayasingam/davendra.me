@@ -12,8 +12,8 @@ const fetchHelper = async ({ url, payload }: FetchHelperProps) =>
             headers: {
                 Accept: 'application/vnd.github+json',
                 Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
-                'X-GitHub-Api-Version': '2022-11-28',
-            },
+                'X-GitHub-Api-Version': '2022-11-28'
+            }
         }
     )
         .then(async res => 
@@ -46,16 +46,15 @@ const fetchHelper = async ({ url, payload }: FetchHelperProps) =>
             extension: file.name.split('.').pop(),
             url: file.download_url,
             path: file.path,
-            type: file.type,
+            type: file.type
         }
-        console.log(fileData)
 
         // if it's a directory, fetch the files inside it
         if (file.type === 'dir')
         {
             await fetchHelper({
                 url: `${process.env.GITHUB_URL!}/${file.path}`,
-                payload: fileData.children = [],
+                payload: fileData.children = []
             })
         }
         else
@@ -77,7 +76,7 @@ const fetchFilesFromGitHub = async () =>
 {
     const res = await fetchHelper({
         url: process.env.GITHUB_URL!,
-        payload: [],
+        payload: []
     })
 
     return res

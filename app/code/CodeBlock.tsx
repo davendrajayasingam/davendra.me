@@ -29,7 +29,6 @@ type Props = {
 
 const CodeBlock = ({ repoFileData, className }: Props) =>
 {
-    console.log(repoFileData)
     const fileExtension = repoFileData?.name?.split('.')?.pop() || ''
     const codeString = repoFileData?.data
 
@@ -78,7 +77,7 @@ const CodeBlock = ({ repoFileData, className }: Props) =>
             customStyle={{
                 margin: 0,
                 padding: '0.25rem 0.5rem',
-                fontSize: '0.875rem',
+                fontSize: '0.875rem'
             }}
         >
             {codeString}
