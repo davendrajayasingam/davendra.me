@@ -5,7 +5,7 @@ import { toast } from 'react-toastify'
 
 import GlitchControlPanel from '@/app/glitch/GlitchControlPanel'
 import GlitchMemoryPuzzle from './GlitchMemoryPuzzle'
-import GlitchPhotoPuzzle from './GlitchPhotoPuzzle'
+import GlitchPicturePuzzle from './GlitchPicturePuzzle'
 import GlitchSudokuPuzzle from './GlitchSudokuPuzzle'
 import GlitchMazePuzzle from './GlitchMazePuzzle'
 
@@ -13,7 +13,7 @@ export default function Glitch()
 {
     // 1 - 4 = challenges, 5 = kill switch
     const [completedStep, setCompletedStep] = useState<number>(0)
-    const [currentPuzzleNumber, setCurrentPuzzleNumber] = useState<number>(0)
+    const [currentPuzzleNumber, setCurrentPuzzleNumber] = useState<number>(1)
 
     const activatePuzzle = (puzzleNumber: number) =>
     {
@@ -51,7 +51,7 @@ export default function Glitch()
         }
         else
         {
-            toast.error('You have not activated all substations!')
+            toast.error('Access denied! Activated all substations first.')
         }
     }
 
@@ -68,7 +68,7 @@ export default function Glitch()
 
             {
                 currentPuzzleNumber === 1
-                && <GlitchPhotoPuzzle
+                && <GlitchPicturePuzzle
                     onCompleted={completePuzzle}
                     onAbandoned={abandonPuzzle}
                 />
