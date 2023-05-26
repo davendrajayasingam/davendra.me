@@ -5,7 +5,7 @@ import Image from 'next/image'
 import Analytics from '@/utils/components/Analytics'
 import ActivityBar from '@/app/ActivityBar'
 
-import imgGlitchBg from '@/public/images/glitch/bg.png'
+import imgGlitchBg from '@/app/glitch/images/bg.png'
 import ToastComponent from '@/utils/components/ToastComponent'
 
 type Props = {

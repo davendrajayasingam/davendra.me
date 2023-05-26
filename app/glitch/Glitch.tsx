@@ -4,16 +4,16 @@ import { useState } from 'react'
 import { toast } from 'react-toastify'
 
 import GlitchControlPanel from '@/app/glitch/GlitchControlPanel'
-import GlitchMemoryPuzzle from './GlitchMemoryPuzzle'
-import GlitchPicturePuzzle from './GlitchPicturePuzzle'
 import GlitchSudokuPuzzle from './GlitchSudokuPuzzle'
 import GlitchMazePuzzle from './GlitchMazePuzzle'
+import PicturePuzzleContainer from '@/app/glitch/picture-puzzle/PicturePuzzleContainer'
+import MemoryPuzzleContainer from '@/app/glitch/memory-puzzle/MemoryPuzzleContainer'
 
 export default function Glitch()
 {
     // 1 - 4 = challenges, 5 = kill switch
     const [completedStep, setCompletedStep] = useState<number>(0)
-    const [currentPuzzleNumber, setCurrentPuzzleNumber] = useState<number>(1)
+    const [currentPuzzleNumber, setCurrentPuzzleNumber] = useState<number>(2)
 
     const activatePuzzle = (puzzleNumber: number) =>
     {
@@ -68,7 +68,7 @@ export default function Glitch()
 
             {
                 currentPuzzleNumber === 1
-                && <GlitchPicturePuzzle
+                && <PicturePuzzleContainer
                     onCompleted={completePuzzle}
                     onAbandoned={abandonPuzzle}
                 />
@@ -76,7 +76,7 @@ export default function Glitch()
 
             {
                 currentPuzzleNumber === 2
-                && <GlitchMemoryPuzzle
+                && <MemoryPuzzleContainer
                     onCompleted={completePuzzle}
                     onAbandoned={abandonPuzzle}
                 />

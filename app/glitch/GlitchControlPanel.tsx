@@ -2,14 +2,14 @@ import Image, { StaticImageData } from 'next/image'
 
 import { classNames } from '@/utils/helperFunctions'
 
-import imgBug1 from '@/public/images/glitch/bug-1.png'
-import imgBug2 from '@/public/images/glitch/bug-2.png'
-import imgBug3 from '@/public/images/glitch/bug-3.png'
-import imgBug4 from '@/public/images/glitch/bug-4.png'
-import imgBug1Fixed from '@/public/images/glitch/bug-1-fixed.png'
-import imgBug2Fixed from '@/public/images/glitch/bug-2-fixed.png'
-import imgBug3Fixed from '@/public/images/glitch/bug-3-fixed.png'
-import imgBug4Fixed from '@/public/images/glitch/bug-4-fixed.png'
+import imgBug1 from '@/app/glitch/images/bug-1.png'
+import imgBug2 from '@/app/glitch/images/bug-2.png'
+import imgBug3 from '@/app/glitch/images/bug-3.png'
+import imgBug4 from '@/app/glitch/images/bug-4.png'
+import imgBug1Fixed from '@/app/glitch/images/bug-1-fixed.png'
+import imgBug2Fixed from '@/app/glitch/images/bug-2-fixed.png'
+import imgBug3Fixed from '@/app/glitch/images/bug-3-fixed.png'
+import imgBug4Fixed from '@/app/glitch/images/bug-4-fixed.png'
 
 type Props = {
     completedStep: number
