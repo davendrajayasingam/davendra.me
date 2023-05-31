@@ -457,7 +457,7 @@ module.exports = {
           orange: '#ff901f',
           red: '#ff2975',
           pink: '#f222ff',
-          purple: '#8c1eff',
+          purple: '#8b13d4',
           green: '#a1be01'
         }
       },
