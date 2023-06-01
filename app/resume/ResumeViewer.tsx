@@ -35,6 +35,7 @@ export default function ResumeViewer()
                 renderMode='svg'
                 width={Math.min(windowWidth, 1024)} // max-w-screen-lg
                 renderAnnotationLayer={false}
+                loading={<p className='text-xl text-center text-teal-100'>Loading résumé...</p>}
             />
         </Document>
     )

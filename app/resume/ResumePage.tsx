@@ -2,9 +2,9 @@
 
 import dynamic from 'next/dynamic'
 const ResumeViewer = dynamic(() => import('./ResumeViewer'), { ssr: false })
-
-import { buttonClassName } from '@/utils/helperFunctions'
 import { VscFilePdf } from 'react-icons/vsc'
+
+import { buttonClassName, classNames } from '@/utils/helperFunctions'
 
 export default function ResumePage()
 {
@@ -18,24 +18,23 @@ export default function ResumePage()
     }
 
     return (
-        <div className='w-full text-center max-w-screen-lg mx-auto'>
+        <div>
 
-            <div className='p-4 flex flex-col space-y-8 items-center'>
+            <h1 className='mt-8 font-primary text-4xl text-center text-teal-100'>
+                Résumé
+            </h1>
 
-                <h1 className='font-medium text-4xl text-theme-editor.foreground'>
-                    My Résumé
-                </h1>
-
-                <button
-                    type='button'
-                    onClick={handleDownload}
-                    className={buttonClassName}
-                >
-                    <VscFilePdf className='text-2xl' />
-                    <span>Download</span>
-                </button>
-
-            </div>
+            <button
+                type='button'
+                onClick={handleDownload}
+                className={classNames(
+                    'mt-8 mb-4 mx-auto',
+                    buttonClassName,
+                )}
+            >
+                <VscFilePdf className='text-2xl' />
+                <span>Download PDF</span>
+            </button>
 
             <ResumeViewer />
 

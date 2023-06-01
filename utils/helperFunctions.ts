@@ -4,10 +4,10 @@ export function classNames(...classes: Array<string>)
 }
 
 export const buttonClassName = classNames(
-    'px-4 py-2 rounded-md shadow-md',
+    'px-6 py-2 rounded-full shadow-md',
     'flex items-center justify-center space-x-1',
-    'bg-theme-button.background hover:bg-theme-button.hoverBackground',
-    'font-medium text-theme-button.foreground',
+    'bg-amber-500 hover:bg-amber-400',
+    'font-medium text-amber-100',
     'transition-colors duration-500 ease-in-out',
     'focus:outline-none',
 )

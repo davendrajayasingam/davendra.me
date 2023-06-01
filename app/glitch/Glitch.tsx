@@ -13,7 +13,7 @@ export default function Glitch()
 {
     // 1 - 4 = challenges, 5 = kill switch
     const [completedStep, setCompletedStep] = useState<number>(0)
-    const [currentPuzzleNumber, setCurrentPuzzleNumber] = useState<number>(3)
+    const [currentPuzzleNumber, setCurrentPuzzleNumber] = useState<number>(0)
 
     const activatePuzzle = (puzzleNumber: number) =>
     {

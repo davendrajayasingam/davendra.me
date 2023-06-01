@@ -1,27 +1,39 @@
+import { Righteous } from 'next/font/google'
+
 import '@/app/globals.css'
 
+import Header from '@/app/Header'
+import Footer from '@/app/Footer'
 import Analytics from '@/utils/components/Analytics'
-import ActivityBar from '@/app/ActivityBar'
 import ToastComponent from '@/utils/components/ToastComponent'
+
+const righteous = Righteous({
+  weight: '400',
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-righteous'
+})
 
 type Props = {
   children: React.ReactNode
 }
 
-export default function RootLayout({ children }: Props)
+export default function Layout({ children }: Props)
 {
   return (
-    <html lang='en'>
+    <html
+      lang='en'
+      className={righteous.variable}
+    >
       <head />
-      <body className='font-sans'>
+      <body className='font-sans bg-gradient-to-r from-teal-600 to-emerald-600'>
+        <Header />
         <main>
-          <ActivityBar />
-          <div className='pb-16 md:pb-0 md:ml-16 flex flex-row'>
-            {children}
-          </div>
+          {children}
         </main>
         <Analytics />
         <ToastComponent />
+        <Footer />
       </body>
     </html>
   )

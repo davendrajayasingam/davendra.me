@@ -462,6 +462,7 @@ module.exports = {
         }
       },
       fontFamily: {
+        primary: ['var(--font-righteous)']
       }
     }
   },
