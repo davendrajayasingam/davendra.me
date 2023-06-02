@@ -29,24 +29,24 @@ export default function Contact()
                     <Image
                         src={linkedInLogo}
                         alt='LinkedIn'
-                        className='object-contain'
-                        height={80}
+                        className='object-contain bg-teal-100 hover:bg-teal-50 p-3 rounded-xl shadow-md transition-colors duration-500 ease-in-out'
+                        height={88}
                     />
                 </Link>
                 <Link href='https://www.facebook.com/davendra'>
                     <Image
                         src={facebookLogo}
                         alt='Facebook'
-                        className='object-contain'
-                        height={80}
+                        className='object-contain bg-teal-100 hover:bg-teal-50 p-3 rounded-xl shadow-md transition-colors duration-500 ease-in-out'
+                        height={88}
                     />
                 </Link>
                 <Link href='https://www.instagram.com/davendra.me/'>
                     <Image
                         src={instagramLogo}
                         alt='Instagram'
-                        className='object-contain'
-                        height={80}
+                        className='object-contain bg-teal-100 hover:bg-teal-50 p-3 rounded-xl shadow-md transition-colors duration-500 ease-in-out'
+                        height={88}
                     />
                 </Link>
             </div>
