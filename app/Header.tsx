@@ -25,7 +25,7 @@ export default function Header()
 
     return (
         <header className='sticky top-2 z-50 flex justify-center'>
-            <nav className='m-2 p-2 flex flex-row items-center justify-center bg-white bg-opacity-20 rounded-full backdrop-blur-md'>
+            <nav className='m-2 p-2 flex flex-row items-center justify-center space-x-1 bg-white bg-opacity-20 rounded-full backdrop-blur-md'>
                 {displayLink(<FaHome className='text-2xl text-teal-800' />, '/')}
                 {displayLink('Projects', '/projects')}
                 {displayLink('Résumé', '/resume')}

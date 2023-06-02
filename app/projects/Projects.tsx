@@ -4,6 +4,7 @@ import { Metadata } from 'next'
 
 import Heading from '@/app/(ui)/Heading'
 import Paragraph from '@/app/(ui)/Paragraph'
+import Title from '@/app/(ui)/Title'
 
 type Props = {
     projects: {
@@ -18,11 +19,11 @@ export default function Projects({ projects }: Props)
     return (
         <div className='max-w-xl mx-auto'>
 
-            <Heading className='mt-8 mb-6'>
+            <Title className='my-8'>
                 Projects
-            </Heading>
+            </Title>
 
-            <div className='p-4 flex flex-col space-y-8'>
+            <div className='p-4 pt-0 flex flex-col space-y-8'>
                 {
                     projects.map(project => (
                         <Link

@@ -1,6 +1,11 @@
-import ContactPage from '@/app/contact/ContactPage'
+import Contact from '@/app/contact/Contact'
+
+export const metadata = {
+  title: 'Contact',
+  description: ''
+}
 
 export default async function Page()
 {
-  return <ContactPage />
+  return <Contact />
 }

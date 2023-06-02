@@ -3,19 +3,24 @@ import Image from 'next/image'
 import { VscLinkExternal } from 'react-icons/vsc'
 import { Tooltip } from 'react-tooltip'
 
+import Title from '@/app/(ui)/Title'
+import Heading from '@/app/(ui)/Heading'
+import Paragraph from '@/app/(ui)/Paragraph'
+import ExternalLink from '@/app/(ui)/ExternalLink'
+
 import profilePicture from '@/app/images/davendra.png'
 
 export default function Homepage()
 {
     const showSkillWithTooltip = (skill: string, tooltip: string) => (
         <div className='p-2'>
-            <h1
+            <p
                 className='bg-teal-800 font-medium text-teal-100 px-6 py-2 rounded-full cursor-pointer'
                 data-tooltip-id={skill}
                 data-tooltip-content={tooltip}
             >
                 {skill}
-            </h1>
+            </p>
             <Tooltip
                 id={skill}
                 className='max-w-[12rem]'
@@ -25,9 +30,9 @@ export default function Homepage()
 
     const showSkillCategory = (category: string, children: React.ReactNode) => (
         <div className='mt-4'>
-            <h2 className='text-xl'>
+            <Paragraph className='text-center'>
                 {category}
-            </h2>
+            </Paragraph>
             <div className='mt-2 flex flex-wrap items-center justify-center -ml-2'>
                 {children}
             </div>
@@ -35,49 +40,42 @@ export default function Homepage()
     )
 
     return (
-        <div className='p-4 w-screen max-w-xl mx-auto text-teal-100 text-center'>
+        <div className='p-4 max-w-xl mx-auto'>
 
-            <h1 className='mt-4 font-primary text-4xl'>
+            <Heading className='mt-4'>
                 Hello World!
-            </h1>
-            <h1 className='mt-4 font-primary text-6xl'>
+            </Heading>
+
+            <Title className='mt-4 mb-8'>
                 I'm Dave,
-            </h1>
+            </Title>
 
-            <div className='mt-8'>
-                <Image
-                    src={profilePicture}
-                    alt='Davendra Jayasingam'
-                    className='object-contain rounded-full max-w-xs mx-auto'
-                />
-            </div>
+            <Image
+                src={profilePicture}
+                alt='Davendra Jayasingam'
+                className='object-contain rounded-full max-w-xs mx-auto'
+            />
 
-            <h1 className='mt-4 font-primary text-4xl'>
+            <Heading className='mt-4'>
                 a Full-Stack
                 <br />
                 Web Developer.
-            </h1>
+            </Heading>
 
-            <p className='mt-4 text-xl text-justify leading-relaxed'>
+            <Paragraph className='mt-4'>
                 I work with brands and event agencies to bring websites and marketing campaigns to life. I'm currently a Lead Web Developer at&nbsp;
-                <Link
-                    href='https://sixides.com'
-                    target='_blank'
-                    rel='noopener noreferrer'
-                    className='inline-flex items-center space-x-1 text-amber-400 underline'
-                >
-                    <span>SIXiDES</span>
-                    <VscLinkExternal className='inline ml-1' />
-                </Link>.
-            </p>
+                <ExternalLink link='https://sixides.com'>
+                    SIXiDES
+                </ExternalLink>
+            </Paragraph>
 
             <hr className='my-12 border-teal-100' />
 
-            <h1 className='mt-4 font-primary text-4xl'>
+            <Heading className='mt-4'>
                 About
-            </h1>
+            </Heading>
 
-            <p className='mt-4 text-xl text-justify leading-relaxed'>
+            <Paragraph className='mt-4'>
                 I enjoy creating web platforms, dashboards, microsites, hyper-casual web games, and gamification related contests.
                 <br />
                 <br />
@@ -113,13 +111,13 @@ export default function Homepage()
                     contact
                 </Link>
                 &nbsp;me with inquiries you may have.
-            </p>
+            </Paragraph>
 
             <hr className='my-12 border-teal-100' />
 
-            <h1 className='mt-4 mb-8 font-primary text-4xl'>
+            <Heading className='mt-4 mb-8'>
                 Knowledge
-            </h1>
+            </Heading>
 
             {showSkillCategory('Programming Languages', (
                 <>

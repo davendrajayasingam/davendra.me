@@ -1,6 +1,6 @@
-import ResumePage from '@/app/resume/ResumePage'
+import Resume from '@/app/resume/Resume'
 
 export default async function Page()
 {
-  return <ResumePage />
+  return <Resume />
 }
