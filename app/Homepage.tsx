@@ -7,6 +7,7 @@ import Title from '@/app/(ui)/Title'
 import Heading from '@/app/(ui)/Heading'
 import Paragraph from '@/app/(ui)/Paragraph'
 import ExternalLink from '@/app/(ui)/ExternalLink'
+import Divider from '@/app/(ui)/Divider'
 
 import profilePicture from '@/app/images/davendra.png'
 
@@ -64,12 +65,12 @@ export default function Homepage()
 
             <Paragraph className='mt-4'>
                 I work with brands and event agencies to bring websites and marketing campaigns to life. I'm currently a Lead Web Developer at&nbsp;
-                <ExternalLink link='https://sixides.com'>
+                <ExternalLink href='https://sixides.com'>
                     SIXiDES
                 </ExternalLink>
             </Paragraph>
 
-            <hr className='my-12 border-teal-100' />
+            <Divider />
 
             <Heading className='mt-4'>
                 About
@@ -113,7 +114,7 @@ export default function Homepage()
                 &nbsp;me with inquiries you may have.
             </Paragraph>
 
-            <hr className='my-12 border-teal-100' />
+            <Divider />
 
             <Heading className='mt-4 mb-8'>
                 Knowledge

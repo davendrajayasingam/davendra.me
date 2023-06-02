@@ -126,7 +126,7 @@ export default async function Page()
       </Heading>
 
       <Paragraph className='px-4 max-w-xl mx-auto'>
-        This project was immensely challenging, but it was also crazy fun. The Agile Scrum model worked best, and embracing changes was a necessity. My team was super fun to work with, and I learned a lot. Check out our work at <ExternalLink link='https://sixides.com'>sixides.com</ExternalLink>.
+        This project was immensely challenging, but it was also crazy fun. The Agile Scrum model worked best, and embracing changes was a necessity. My team was super fun to work with, and I learned a lot. Check out our work at <ExternalLink href='https://sixides.com'>sixides.com</ExternalLink>.
       </Paragraph>
 
     </div>

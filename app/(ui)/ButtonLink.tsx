@@ -1,23 +1,21 @@
+import Link from 'next/link'
+
 import { classNames } from '@/utils/helperFunctions'
 
 type Props = {
-    onClick: () => void,
+    href: string,
     children?: React.ReactNode,
     className?: string,
     type?: 'button' | 'submit',
     disabled?: boolean
 }
 
-export default function Button({ onClick, children, className, type = 'button', disabled = false }: Props)
+export default function ButtonLink({ href, children, className, type = 'button', disabled = false }: Props)
 {
     return (
-        <button
+        <Link
+            href={href}
             type={type}
-            onClick={e =>
-            {
-                e.preventDefault()
-                onClick()
-            }}
             className={classNames(
                 className ? className : '',
                 'font-medium text-white text-lg',
@@ -27,9 +25,8 @@ export default function Button({ onClick, children, className, type = 'button', 
                 'transition-colors duration-500 ease-in-out',
                 'outline-none focus:outline-none'
             )}
-            disabled={disabled}
         >
             {children}
-        </button>
+        </Link>
     )
 }
