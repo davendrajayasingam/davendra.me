@@ -21,7 +21,7 @@ export default function Contact()
             </Title>
 
             <Heading className='mb-4'>
-                Social
+                Socials
             </Heading>
 
             <div className='grid grid-cols-3 gap-2 place-items-center'>

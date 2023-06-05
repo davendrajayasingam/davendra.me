@@ -14,7 +14,7 @@ export default function Header()
         <Link
             href={link}
             className={classNames(
-                'font-medium text-teal-800 bg-teal-50 px-4 py-1 rounded-full',
+                'font-medium text-teal-100 bg-teal-50 px-4 py-1 rounded-full',
                 pathname === link ? 'bg-opacity-25' : 'bg-opacity-0',
                 'hover:bg-opacity-25 transition-all duration-500 ease-in-out'
             )}
@@ -25,8 +25,8 @@ export default function Header()
 
     return (
         <header className='sticky top-2 z-50 flex justify-center'>
-            <nav className='m-2 p-2 flex flex-row items-center justify-center space-x-1 bg-white bg-opacity-20 rounded-full backdrop-blur-md'>
-                {displayLink(<FaHome className='text-2xl text-teal-800' />, '/')}
+            <nav className='m-2 p-2 flex flex-row items-center justify-center space-x-1 bg-teal-600 bg-opacity-20 rounded-full backdrop-blur-md'>
+                {displayLink(<FaHome className='text-2xl text-teal-100' />, '/')}
                 {displayLink('Projects', '/projects')}
                 {displayLink('Résumé', '/resume')}
                 {displayLink('Contact', '/contact')}
