@@ -1,12 +1,18 @@
+import { Righteous } from 'next/font/google'
+
 import '@/app/globals.css'
 
-import Image from 'next/image'
-
+import Header from '@/app/Header'
+import Footer from '@/app/Footer'
 import Analytics from '@/utils/components/Analytics'
-import ActivityBar from '@/app/ActivityBar'
-
-import imgGlitchBg from '@/app/glitch/images/bg.png'
 import ToastComponent from '@/utils/components/ToastComponent'
+
+const righteous = Righteous({
+  weight: '400',
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-righteous'
+})
 
 type Props = {
   children: React.ReactNode
@@ -15,25 +21,19 @@ type Props = {
 export default function Layout({ children }: Props)
 {
   return (
-    <html lang='en'>
+    <html
+      lang='en'
+      className={righteous.variable}
+    >
       <head />
-      <body className='font-sans'>
-        <div className='fixed inset-0 z-0'>
-          <Image
-            src={imgGlitchBg}
-            alt='Glitch'
-            className='h-screen object-cover object-center'
-            fill
-          />
-        </div>
-        <main className='relative z-1'>
-          <ActivityBar />
-          <div className='pb-16 md:pb-0 md:ml-16 flex flex-row'>
-            {children}
-          </div>
+      <body className='font-sans bg-gradient-to-r from-teal-600 to-emerald-600'>
+        <Header />
+        <main>
+          {children}
         </main>
         <Analytics />
         <ToastComponent />
+        <Footer />
       </body>
     </html>
   )

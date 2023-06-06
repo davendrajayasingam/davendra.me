@@ -9,7 +9,7 @@ import { classNames } from '@/utils/helperFunctions'
 export default function Header()
 {
     const pathname = usePathname()
-    console.log(pathname)
+
     const displayLink = (title: string | React.ReactNode, link: string) => (
         <Link
             href={link}
