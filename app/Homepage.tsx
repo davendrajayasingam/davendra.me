@@ -95,12 +95,12 @@ export default function Homepage()
                     resume
                 </Link>
                 , or view the&nbsp;
-                <Link
-                    href='/code'
+                <ExternalLink
+                    href='https://github.com/davendrajayasingam/davendra.me'
                     className='underline text-amber-400'
                 >
                     source code
-                </Link>
+                </ExternalLink>
                 &nbsp;of this website to gain insight into my coding style.
                 <br />
                 <br />

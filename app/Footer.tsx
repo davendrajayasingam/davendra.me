@@ -10,7 +10,7 @@ export default function Footer()
             <Divider />
 
             <p className='pb-4 text-teal-100 text-center'>
-                &copy; {new Date().getFullYear()} Davendra Jayasingam.
+                &copy; {new Date().getFullYear()} Davendra Jayasingam
             </p>
 
         </footer>

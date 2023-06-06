@@ -451,7 +451,7 @@ module.exports = {
           'window.activeBorder': '#0b121b',
           'window.inactiveBorder': '#0b121b7a'
         },
-        'glitch': {
+        'secret': {
           // https://www.pinterest.com/pin/442126888412796915/
           yellow: '#ffd319',
           orange: '#ff901f',
