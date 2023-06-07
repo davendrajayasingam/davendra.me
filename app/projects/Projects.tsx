@@ -1,15 +1,13 @@
 import Image, { StaticImageData } from 'next/image'
 import Link from 'next/link'
-import { Metadata } from 'next'
 
-import Heading from '@/app/(ui)/Heading'
-import Paragraph from '@/app/(ui)/Paragraph'
 import Title from '@/app/(ui)/Title'
 
 type Props = {
     projects: {
         link: string,
-        metadata: Metadata,
+        title: string,
+        category: string,
         coverImage: StaticImageData
     }[]
 }
@@ -33,17 +31,18 @@ export default function Projects({ projects }: Props)
                         >
                             <div className='px-4 pt-3 pb-2'>
                                 <p className='font-medium text-sm uppercase text-amber-500 tracking-widest'>
-                                    {project.metadata.category as string}
+                                    {project.category as string}
                                 </p>
                                 <p className='font-bold text-3xl uppercase text-teal-800'>
-                                    {project.metadata.title as string}
+                                    {project.title as string}
                                 </p>
                             </div>
                             <div className='pl-12'>
                                 <Image
                                     src={project.coverImage}
-                                    alt={project.metadata.title as string}
+                                    alt={project.title as string}
                                     className='object-contain rounded-tl-xl rounded-br-xl'
+                                    loading='eager'
                                 />
                             </div>
                         </Link>

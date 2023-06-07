@@ -18,7 +18,7 @@ import ourJourneyImage from '@/app/projects/the-end/images/the-end-our-journey-y
 export const metadata = {
   title: 'The End',
   description: 'The End is a series of microsites that is the first chapter of a multi-part initiative leading up to the launch of Emergent Game\'s web3 triple-A MMO, Resurgence',
-  category: 'MICROSITES'
+  category: 'Project'
 }
 
 export default async function Page()
@@ -27,6 +27,7 @@ export default async function Page()
     <Image
       src={cover}
       alt={text}
+      loading='eager'
     />
     <Heading>
       {text}
@@ -43,7 +44,8 @@ export default async function Page()
   </>
 
   return <Project
-    metadata={metadata}
+    title={metadata.title}
+    description={metadata.description}
     coverImage={coverImage}
   >
     <div className='mt-8 max-w-screen-xl mx-auto flex flex-col space-y-8'>

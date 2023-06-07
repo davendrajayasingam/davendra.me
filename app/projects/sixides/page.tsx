@@ -16,13 +16,14 @@ import ExternalLink from '@/app/(ui)/ExternalLink'
 export const metadata = {
   title: 'SIXiDES',
   description: 'Sixides is an ID-tech, consumer driven platform to bridge homeowners towards professionals, vendors and institutions.',
-  category: 'Website'
+  category: 'Project'
 }
 
 export default async function Page()
 {
   return <Project
-    metadata={metadata}
+    title={metadata.title}
+    description={metadata.description}
     coverImage={coverImage}
   >
     <div className='mt-8 max-w-screen-xl mx-auto flex flex-col space-y-8'>
@@ -34,6 +35,7 @@ export default async function Page()
       <Image
         src={articlesImage}
         alt='Articles'
+        loading='eager'
       />
 
       <Heading>
@@ -47,6 +49,7 @@ export default async function Page()
       <Image
         src={interiorDesignersImage}
         alt='Interior Designers'
+        loading='eager'
       />
 
       <Heading>
@@ -60,6 +63,7 @@ export default async function Page()
       <Image
         src={eQuoteImage}
         alt='Almanac'
+        loading='eager'
       />
 
       <Heading>
@@ -77,6 +81,7 @@ export default async function Page()
       <Image
         src={almanacImage}
         alt='Almanac'
+        loading='eager'
       />
 
       <Heading>
@@ -94,6 +99,7 @@ export default async function Page()
       <Image
         src={businessImage}
         alt='Business'
+        loading='eager'
       />
 
       <Heading>
@@ -107,6 +113,7 @@ export default async function Page()
       <Image
         src={cmsImage}
         alt='CMS'
+        loading='eager'
       />
 
       <Heading>

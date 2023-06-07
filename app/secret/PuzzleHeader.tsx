@@ -22,6 +22,7 @@ export default function PuzzleHeader({ title, texts, image }: Props)
                     src={image}
                     alt={title}
                     className='w-full h-auto mx-auto mb-4'
+                    loading='eager'
                 />
             }
 

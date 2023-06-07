@@ -1,4 +1,3 @@
-import { Metadata } from 'next'
 import Image, { StaticImageData } from 'next/image'
 
 import Title from '@/app/(ui)/Title'
@@ -6,23 +5,25 @@ import Heading from '@/app/(ui)/Heading'
 import Paragraph from '@/app/(ui)/Paragraph'
 
 type Props = {
-    metadata: Metadata,
+    title: string,
+    description: string,
     coverImage: StaticImageData,
     children: React.ReactNode
 }
 
-export default function Project({ metadata, coverImage, children }: Props)
+export default function Project({ title, description, coverImage, children }: Props)
 {
     return (
         <div className='my-8 max-w-screen-xl mx-auto'>
 
             <Title className='mb-8'>
-                {metadata.title as string}
+                {title as string}
             </Title>
 
             <Image
                 src={coverImage}
-                alt={metadata.title as string}
+                alt={title as string}
+                loading='eager'
             />
 
             <Heading className='my-8'>
@@ -30,7 +31,7 @@ export default function Project({ metadata, coverImage, children }: Props)
             </Heading>
 
             <Paragraph className='px-4 max-w-xl mx-auto'>
-                {metadata.description as string}
+                {description as string}
             </Paragraph>
 
             {children}

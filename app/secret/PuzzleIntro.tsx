@@ -27,6 +27,7 @@ export default function PuzzleIntro({ completedStep, activatePuzzle }: Props)
                 src={imageSrc}
                 alt='Reveal'
                 className='rounded-t-xl'
+                loading='eager'
             />
             <span className='block w-full p-4 font-semibold text-lg text-white text-center'>
                 {description}
@@ -56,7 +57,7 @@ export default function PuzzleIntro({ completedStep, activatePuzzle }: Props)
             {
                 completedStep < 3
                 && <PuzzleHeader
-                    title='Destiny Beckons'
+                    title='Secret Quest'
                     texts={[
                         'In the realm of shadow and fire, a whispered prophecy echoes through the land. You, brave adventurer, have been chosen to undertake a legendary quest, a path fraught with three arduous challenges that will test your resolve and shape the destiny of Middle-earth.',
                         'Your first challenge is to assemble the fellowship, for they will embark on the perilous journey to Mordor and carry the One Ring to its ultimate fate.',

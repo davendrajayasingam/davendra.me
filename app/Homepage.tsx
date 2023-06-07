@@ -1,6 +1,5 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import { VscLinkExternal } from 'react-icons/vsc'
 import { Tooltip } from 'react-tooltip'
 
 import Title from '@/app/(ui)/Title'
@@ -55,6 +54,7 @@ export default function Homepage()
                 src={profilePicture}
                 alt='Davendra Jayasingam'
                 className='object-contain rounded-full max-w-xs mx-auto'
+                loading='eager'
             />
 
             <Heading className='mt-4'>

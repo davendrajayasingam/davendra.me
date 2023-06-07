@@ -6,17 +6,24 @@ import { metadata as theEndMetadata } from '@/app/projects/the-end/page'
 import sixidesCoverImage from '@/app/projects/sixides/images/sixides-cover.png'
 import theEndCoverImage from '@/app/projects/the-end/images/the-end-cover.png'
 
+export const metadata = {
+  title: 'Projects',
+  description: 'Explore my portfolio of notable projects and see the creative solutions I\'ve crafted. From web development to gamification, discover how I can bring your ideas to life.'
+}
+
 export default async function Page()
 {
   const allProjects = [
     {
       link: 'sixides',
-      metadata: sixidesMetadata,
+      title: sixidesMetadata.title,
+      category: 'Website',
       coverImage: sixidesCoverImage
     },
     {
       link: 'the-end',
-      metadata: theEndMetadata,
+      title: theEndMetadata.title,
+      category: 'Microsites',
       coverImage: theEndCoverImage
     }
   ]

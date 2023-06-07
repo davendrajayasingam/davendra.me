@@ -1,11 +1,12 @@
 'use client'
 
 import dynamic from 'next/dynamic'
-const ResumeViewer = dynamic(() => import('./ResumeViewer'), { ssr: false })
 import { VscFilePdf } from 'react-icons/vsc'
 
 import Title from '@/app/(ui)/Title'
 import Button from '@/app/(ui)/Button'
+
+const ResumeViewer = dynamic(() => import('./ResumeViewer'), { ssr: false })
 
 export default function Resume()
 {
