@@ -6,14 +6,18 @@ import { load, trackPageview } from 'fathom-client'
 import { useEffect, Suspense } from 'react'
 import { usePathname, useSearchParams } from 'next/navigation'
 
-function TrackPageView()
+type Props = {
+    siteId: string
+}
+
+function TrackPageView({ siteId }: Props)
 {
     const pathname = usePathname()
     const searchParams = useSearchParams()
 
     useEffect(() =>
     {
-        load(process.env.NEXT_PUBLIC_FATHOM_ID!, {
+        load(siteId, {
             honorDNT: true,
             includedDomains: [
                 'davendra.me',
@@ -34,9 +38,9 @@ function TrackPageView()
     return null
 }
 
-export default function FathomAnalytics()
+export default function FathomAnalytics({ siteId }: Props)
 {
     return <Suspense fallback={null}>
-        <TrackPageView />
+        <TrackPageView siteId={siteId} />
     </Suspense>
 }
