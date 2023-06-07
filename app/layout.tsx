@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     default: 'Davendra Jayasingam',
     template: '%s | Davendra Jayasingam'
   },
-  description: 'Full-stack web developer from Malaysia.',
+  description: 'Full-stack web developer from Malaysia. I work with brands and event agencies to bring websites and marketing campaigns to life.',
   keywords: [
     'web',
     'developer',
