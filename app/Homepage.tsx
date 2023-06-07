@@ -55,6 +55,7 @@ export default function Homepage()
                 alt='Davendra Jayasingam'
                 className='object-contain rounded-full max-w-xs mx-auto'
                 loading='eager'
+                placeholder='blur'
             />
 
             <Heading className='mt-4'>

@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import vCardsJS from 'vcards-js'
 
-import profilePicture from '@/app/images/davendra.png'
+import profilePicture from '@/app/images/davendra-512x.png'
 import { getAbsolutePath } from '@/utils/absolutePathHelper'
 
 export async function GET(request: NextRequest)
