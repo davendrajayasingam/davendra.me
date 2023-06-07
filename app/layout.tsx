@@ -9,7 +9,6 @@ import Analytics from '@/utils/components/Analytics'
 import ToastComponent from '@/utils/components/ToastComponent'
 
 export const metadata: Metadata = {
-  metadataBase: new URL(`https://${process.env.NEXT_PUBLIC_VERCEL_URL}`),
   title: {
     default: 'Davendra Jayasingam',
     template: '%s | Davendra Jayasingam'
@@ -44,6 +43,8 @@ export const metadata: Metadata = {
     'experience',
     'resume',
     'portfolio',
+    'projects',
+    'contact',
     'dave'
   ],
   robots: 'index, follow',

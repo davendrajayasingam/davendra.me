@@ -1,18 +1,31 @@
-import Image, { StaticImageData } from 'next/image'
+import Image from 'next/image'
 import Link from 'next/link'
 
 import Title from '@/app/(ui)/Title'
 
-type Props = {
-    projects: {
-        link: string,
-        title: string,
-        category: string,
-        coverImage: StaticImageData
-    }[]
-}
+import { metadata as sixidesMetadata } from '@/app/projects/sixides/page'
+import { metadata as theEndMetadata } from '@/app/projects/the-end/page'
 
-export default function Projects({ projects }: Props)
+import sixidesCoverImage from '@/app/projects/sixides/images/sixides-cover.png'
+import theEndCoverImage from '@/app/projects/the-end/images/the-end-cover.png'
+
+// used in sitemap.ts
+export const projects = [
+    {
+        slug: 'sixides',
+        title: sixidesMetadata.title,
+        category: 'Website',
+        coverImage: sixidesCoverImage
+    },
+    {
+        slug: 'the-end',
+        title: theEndMetadata.title,
+        category: 'Microsites',
+        coverImage: theEndCoverImage
+    }
+]
+
+export default function Projects()
 {
     return (
         <div className='max-w-xl mx-auto'>
@@ -25,8 +38,8 @@ export default function Projects({ projects }: Props)
                 {
                     projects.map(project => (
                         <Link
-                            key={project.link}
-                            href={`/projects/${project.link}`}
+                            key={project.slug}
+                            href={`/projects/${project.slug}`}
                             className='max-w-xl mx-auto bg-teal-100 hover:bg-teal-50 rounded-xl shadow-md transition-colors duration-500 ease-in-out'
                         >
                             <div className='px-4 pt-3 pb-2'>
