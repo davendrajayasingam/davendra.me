@@ -15,14 +15,13 @@ export async function GET(request: NextRequest)
   const buffer = await imageUrlData.arrayBuffer()
   const stringifiedBuffer = Buffer.from(buffer).toString('base64')
   const contentType = imageUrlData.headers.get('content-type') || 'image/png'
-  const imageBase64 = `data:${contentType};base64,${stringifiedBuffer}`
+  const imageBase64 = stringifiedBuffer
 
   //set properties
   vCard.firstName = 'Davendra'
   vCard.lastName = 'Jayasingam'
   vCard.email = process.env.PERSONAL_EMAIL!
   vCard.photo.embedFromString(imageBase64, contentType)
-  console.log(vCard.photo)
   vCard.title = 'Full-Stack Web Developer'
   vCard.url = 'https://davendra.me'
   vCard.nickname = 'Dave'
