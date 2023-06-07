@@ -28,6 +28,7 @@ export default function PuzzleIntro({ completedStep, activatePuzzle }: Props)
                 alt='Reveal'
                 className='rounded-t-xl'
                 loading='eager'
+                placeholder='blur'
             />
             <span className='block w-full p-4 font-semibold text-lg text-white text-center'>
                 {description}

@@ -56,6 +56,7 @@ export default function Projects()
                                     alt={project.title as string}
                                     className='object-contain rounded-tl-xl rounded-br-xl'
                                     loading='eager'
+                                    placeholder='blur'
                                 />
                             </div>
                         </Link>

@@ -12,7 +12,9 @@ export async function GET(request: NextRequest)
   vCard.firstName = 'Davendra'
   vCard.lastName = 'Jayasingam'
   vCard.email = process.env.PERSONAL_EMAIL!
-  vCard.photo.attachFromUrl(profilePicture.src, 'PNG')
+  vCard.workEmail = process.env.WORK_EMAIL!
+  vCard.photo.attachFromUrl(profilePicture.src, 'image/png')
+  vCard.logo.attachFromUrl(profilePicture.src, 'image/png')
   vCard.title = 'Full-Stack Web Developer'
   vCard.url = 'https://davendra.me'
   vCard.nickname = 'Dave'

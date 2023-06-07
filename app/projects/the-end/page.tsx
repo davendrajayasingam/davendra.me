@@ -28,6 +28,7 @@ export default async function Page()
       src={cover}
       alt={text}
       loading='eager'
+      placeholder='blur'
     />
     <Heading>
       {text}

@@ -32,6 +32,7 @@ export default function Contact()
                         className='object-contain bg-teal-100 hover:bg-teal-50 p-3 rounded-xl shadow-md transition-colors duration-500 ease-in-out'
                         height={88}
                         loading='eager'
+                        placeholder='blur'
                     />
                 </Link>
                 <Link href='https://www.facebook.com/davendra'>
@@ -41,6 +42,7 @@ export default function Contact()
                         className='object-contain bg-teal-100 hover:bg-teal-50 p-3 rounded-xl shadow-md transition-colors duration-500 ease-in-out'
                         height={88}
                         loading='eager'
+                        placeholder='blur'
                     />
                 </Link>
                 <Link href='https://www.instagram.com/davendra.me/'>
@@ -50,6 +52,7 @@ export default function Contact()
                         className='object-contain bg-teal-100 hover:bg-teal-50 p-3 rounded-xl shadow-md transition-colors duration-500 ease-in-out'
                         height={88}
                         loading='eager'
+                        placeholder='blur'
                     />
                 </Link>
             </div>
