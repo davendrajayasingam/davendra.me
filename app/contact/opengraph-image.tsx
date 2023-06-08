@@ -28,11 +28,11 @@ export default async function Image()
                         width={1000}
                     />
 
-                    <p tw='flex font-bold text-teal-100 text-4xl'>
+                    <p tw='flex font-bold text-teal-100 text-6xl'>
                         FULL STACK WEB DEVELOPER
                     </p>
 
-                    <p tw='flex font-bold bg-teal-100 rounded-full px-12 py-3 text-teal-600 text-4xl'>
+                    <p tw='flex font-bold bg-teal-100 rounded-full px-12 py-3 text-teal-600 text-6xl'>
                         GET IN TOUCH
                     </p>
                 </div>

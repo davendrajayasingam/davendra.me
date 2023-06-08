@@ -28,7 +28,7 @@ export default async function Image()
                         width={1000}
                     />
 
-                    <p tw='flex font-bold text-teal-100 text-4xl'>
+                    <p tw='flex font-bold text-teal-100 text-6xl'>
                         FULL STACK WEB DEVELOPER
                     </p>
                 </div>
