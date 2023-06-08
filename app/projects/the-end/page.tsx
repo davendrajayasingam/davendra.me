@@ -15,10 +15,18 @@ import askAlexImage from '@/app/projects/the-end/images/the-end-ask-alex-blog.pn
 import wroImage from '@/app/projects/the-end/images/the-end-world-relocation-organization.png'
 import ourJourneyImage from '@/app/projects/the-end/images/the-end-our-journey-your-future.png'
 
+const metadataTitle = 'The End'
+const metadataDescription = 'The End is a series of microsites that is the first chapter of a multi-part initiative leading up to the launch of Emergent Game\'s web3 triple-A MMO, Resurgence'
+
 export const metadata = {
-  title: 'The End',
-  description: 'The End is a series of microsites that is the first chapter of a multi-part initiative leading up to the launch of Emergent Game\'s web3 triple-A MMO, Resurgence',
-  category: 'Project'
+  title: metadataTitle,
+  description: metadataDescription,
+  category: 'Project',
+  openGraph: {
+    title: metadataTitle,
+    description: metadataDescription,
+    url: 'https://davendra.me/projects/the-end'
+  }
 }
 
 export default async function Page()

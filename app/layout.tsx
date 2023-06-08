@@ -8,12 +8,23 @@ import Footer from '@/app/Footer'
 import Analytics from '@/utils/components/Analytics'
 import ToastComponent from '@/utils/components/ToastComponent'
 
+const metadataTitle = 'Davendra Jayasingam'
+const metadataDescription = 'Full-stack web developer from Malaysia. I work with brands and event agencies to bring websites and marketing campaigns to life.'
 export const metadata: Metadata = {
   title: {
-    default: 'Davendra Jayasingam',
-    template: '%s | Davendra Jayasingam'
+    default: metadataTitle,
+    template: `%s | ${metadataTitle}`
   },
-  description: 'Full-stack web developer from Malaysia. I work with brands and event agencies to bring websites and marketing campaigns to life.',
+  description: metadataDescription,
+  openGraph: {
+    title: {
+      default: metadataTitle,
+      template: `%s | ${metadataTitle}`
+    },
+    description: metadataDescription,
+    url: 'https://davendra.me',
+    type: 'website'
+  },
   keywords: [
     'web',
     'developer',

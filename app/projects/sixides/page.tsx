@@ -13,10 +13,18 @@ import cmsImage from '@/app/projects/sixides/images/sixides-cms.png'
 import Heading from '@/app/(ui)/Heading'
 import ExternalLink from '@/app/(ui)/ExternalLink'
 
+const metadataTitle = 'SIXiDES'
+const metadataDescription = 'Sixides is an ID-tech, consumer driven platform to bridge homeowners towards professionals, vendors and institutions.'
+
 export const metadata = {
-  title: 'SIXiDES',
-  description: 'Sixides is an ID-tech, consumer driven platform to bridge homeowners towards professionals, vendors and institutions.',
-  category: 'Project'
+  title: metadataTitle,
+  description: metadataDescription,
+  category: 'Project',
+  openGraph: {
+    title: metadataTitle,
+    description: metadataDescription,
+    url: 'https://davendra.me/projects/sixides'
+  }
 }
 
 export default async function Page()
