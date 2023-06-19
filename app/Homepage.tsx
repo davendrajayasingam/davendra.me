@@ -67,7 +67,7 @@ export default function Homepage()
             </Heading>
 
             <Paragraph className='mt-4'>
-                I work with brands and event agencies to bring websites and marketing campaigns to life. I'm currently a Lead Web Developer at&nbsp;
+                I work with brands and creative agencies to bring websites and marketing campaigns to life. I'm currently a Lead Web Developer at&nbsp;
                 <ExternalLink href='https://sixides.com'>
                     SIXiDES
                 </ExternalLink>
@@ -80,7 +80,16 @@ export default function Homepage()
             </Heading>
 
             <Paragraph className='mt-4'>
-                I enjoy creating web platforms, dashboards, microsites, hyper-casual web games, and gamification related contests.
+                I absolutely love programming. Seriously. Can't get enough of it. I started out in the early days of the web by creating sites using Adobe Dreamweaver. When I noticed the limitations of the software, I moved on to learn HTML + CSS + JavaScript.
+                <br />
+                <br />
+                Of course, that wasn't enough. I wanted to do more with the web, so I learnt how to setup servers and create APIs using PHP. Pretty soon I fell in love with making video games, and moved in that direction. During that period, I noticed a demand in the market for gamification based content, and sought to fill the gap.
+                <br />
+                <br />
+                I've serviced many clients, notably JD Sports and Hong Leong Bank. Using the web, I've built admin dashboards, content management systems, and presented analytics reports from the data collected. The short burst of engagement from events is exhilarating.
+                <br />
+                <br />
+                These days, I'm building platforms to service clients on a bigger scale. With tools like Next.js, Tailwind CSS, AWS, Vercel, and GSAP, I feel like the Incredible Hulk! I dream of learning machine learning, and I'm waiting for an opportunity to jump in.
                 <br />
                 <br />
                 Feel free to check out some of the&nbsp;
@@ -107,7 +116,7 @@ export default function Homepage()
                 &nbsp;of this website to gain insight into my coding style.
                 <br />
                 <br />
-                Please feel free to&nbsp;
+                Do&nbsp;
                 <Link
                     href='/contact'
                     className='underline text-amber-400'
