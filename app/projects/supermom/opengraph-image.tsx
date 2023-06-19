@@ -20,7 +20,7 @@ export default async function Image()
             <div
                 tw='flex flex-col justify-center items-center w-full h-full bg-cover bg-center bg-no-repeat'
                 style={{
-                    backgroundImage: `url(${process.env.VERCEL_URL}${coverImage.src})`
+                    backgroundImage: `url(https://davendra.me${coverImage.src})`
                 }}
             >
                 <div tw='flex flex-col items-center justify-center w-full h-full bg-black bg-opacity-30'>
@@ -31,7 +31,7 @@ export default async function Image()
                     />
 
                     <p tw='flex font-bold bg-teal-100 rounded-full px-12 py-3 text-teal-600 text-6xl'>
-                        {coverImage.src}
+                        {`https://davendra.me${coverImage.src}`}
                     </p>
                 </div>
             </div>

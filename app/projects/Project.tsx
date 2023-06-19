@@ -42,7 +42,7 @@ export default function Project({ title, description, coverImage, children }: Pr
                 href='/projects'
                 className='mt-12 w-72 mx-auto'
             >
-                <BiArrowBack className='inline-block mr-2 w-8 h-8' />
+                <BiArrowBack className='inline-block mr-2 w-6 h-6' />
                 View Other Projects
             </ButtonLink>
 
