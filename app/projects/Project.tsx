@@ -1,8 +1,10 @@
 import Image, { StaticImageData } from 'next/image'
+import { BiArrowBack } from 'react-icons/bi'
 
 import Title from '@/app/(ui)/Title'
 import Heading from '@/app/(ui)/Heading'
 import Paragraph from '@/app/(ui)/Paragraph'
+import ButtonLink from '@/app/(ui)/ButtonLink'
 
 type Props = {
     title: string,
@@ -35,6 +37,14 @@ export default function Project({ title, description, coverImage, children }: Pr
             </Paragraph>
 
             {children}
+
+            <ButtonLink
+                href='/projects'
+                className='mt-12 w-72 mx-auto'
+            >
+                <BiArrowBack className='inline-block mr-2 w-8 h-8' />
+                View Other Projects
+            </ButtonLink>
 
         </div>
     )

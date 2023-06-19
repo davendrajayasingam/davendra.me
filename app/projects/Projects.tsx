@@ -5,9 +5,11 @@ import Title from '@/app/(ui)/Title'
 
 import { metadata as sixidesMetadata } from '@/app/projects/sixides/page'
 import { metadata as theEndMetadata } from '@/app/projects/the-end/page'
+import { metadata as supermomMetadata } from '@/app/projects/supermom/page'
 
 import sixidesCoverImage from '@/app/projects/sixides/images/sixides-cover.png'
 import theEndCoverImage from '@/app/projects/the-end/images/the-end-cover.png'
+import supermomCoverImage from '@/app/projects/supermom/images/supermom-cover.png'
 
 // used in sitemap.ts
 export const projects = [
@@ -18,9 +20,15 @@ export const projects = [
         coverImage: sixidesCoverImage
     },
     {
+        slug: 'supermom',
+        title: supermomMetadata.title,
+        category: 'Gamification',
+        coverImage: supermomCoverImage
+    },
+    {
         slug: 'the-end',
         title: theEndMetadata.title,
-        category: 'Microsites',
+        category: 'Gamification',
         coverImage: theEndCoverImage
     }
 ]
@@ -54,7 +62,7 @@ export default function Projects()
                                 <Image
                                     src={project.coverImage}
                                     alt={project.title as string}
-                                    className='object-contain rounded-tl-xl rounded-br-xl'
+                                    className='rounded-tl-xl rounded-br-xl aspect-video object-cover object-center'
                                     placeholder='blur'
                                 />
                             </div>

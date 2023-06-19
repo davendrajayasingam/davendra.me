@@ -3,7 +3,7 @@ import { ImageResponse } from 'next/server'
 
 export const runtime = 'edge'
 
-export const alt = 'Davendra Jayasingam'
+export const alt = 'The End Project'
 export const size = {
     width: 1200,
     height: 630
@@ -32,8 +32,8 @@ export default async function Image()
                         FULL STACK WEB DEVELOPER
                     </p>
 
-                    <p tw='flex font-bold bg-teal-100 rounded-full px-12 py-3 text-teal-600 text-6xl'>
-                        THE END PROJECT
+                    <p tw='flex font-bold bg-teal-100 rounded-full px-12 py-3 text-teal-600 text-6xl uppercase'>
+                        {alt}
                     </p>
                 </div>
             </div>

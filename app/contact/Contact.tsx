@@ -60,7 +60,10 @@ export default function Contact()
                 Card
             </Heading>
 
-            <ButtonLink href='/api/public/getVCard' className='w-72 mx-auto'>
+            <ButtonLink
+                href='/api/public/getVCard'
+                className='w-72 mx-auto'
+            >
                 Download Business Card
             </ButtonLink>
 
