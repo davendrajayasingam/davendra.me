@@ -92,6 +92,16 @@ export default function Homepage()
                 These days, I'm building platforms to service clients on a bigger scale. With tools like Next.js, Tailwind CSS, AWS, Vercel, and GSAP, I feel like the Incredible Hulk! I dream of learning machine learning, and I'm waiting for an opportunity to jump in.
                 <br />
                 <br />
+                In the meantime, I can help bring your ideas to life. If you can dream it, I would love to realize it. Hit me up on my&nbsp;
+                <Link
+                    href='/contact'
+                    className='underline text-amber-400'
+                >
+                    contact
+                </Link>
+                &nbsp; page. I'm always on the lookout for a worthy challenge.
+                <br />
+                <br />
                 Feel free to check out some of the&nbsp;
                 <Link
                     href='/projects'
@@ -104,7 +114,7 @@ export default function Homepage()
                     href='/resume'
                     className='underline text-amber-400'
                 >
-                    resume
+                    résumé
                 </Link>
                 , or view the&nbsp;
                 <ExternalLink
@@ -114,16 +124,6 @@ export default function Homepage()
                     source code
                 </ExternalLink>
                 &nbsp;of this website to gain insight into my coding style.
-                <br />
-                <br />
-                Do&nbsp;
-                <Link
-                    href='/contact'
-                    className='underline text-amber-400'
-                >
-                    contact
-                </Link>
-                &nbsp;me with inquiries you may have.
             </Paragraph>
 
             <Divider />
