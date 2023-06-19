@@ -43,7 +43,6 @@ export default async function Page()
       <Image
         src={articlesImage}
         alt='Articles'
-        loading='eager'
         placeholder='blur'
       />
 
@@ -58,7 +57,6 @@ export default async function Page()
       <Image
         src={interiorDesignersImage}
         alt='Interior Designers'
-        loading='eager'
         placeholder='blur'
       />
 
@@ -73,7 +71,6 @@ export default async function Page()
       <Image
         src={eQuoteImage}
         alt='Almanac'
-        loading='eager'
         placeholder='blur'
       />
 
@@ -92,7 +89,6 @@ export default async function Page()
       <Image
         src={almanacImage}
         alt='Almanac'
-        loading='eager'
         placeholder='blur'
       />
 
@@ -111,7 +107,6 @@ export default async function Page()
       <Image
         src={businessImage}
         alt='Business'
-        loading='eager'
         placeholder='blur'
       />
 
@@ -126,7 +121,6 @@ export default async function Page()
       <Image
         src={cmsImage}
         alt='CMS'
-        loading='eager'
         placeholder='blur'
       />
 

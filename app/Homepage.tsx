@@ -54,7 +54,6 @@ export default function Homepage()
                 src={profilePicture}
                 alt='Davendra Jayasingam'
                 className='object-contain rounded-full max-w-xs mx-auto'
-                loading='eager'
                 placeholder='blur'
                 width={640}
                 height={640}

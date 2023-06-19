@@ -35,7 +35,6 @@ export default async function Page()
     <Image
       src={cover}
       alt={text}
-      loading='eager'
       placeholder='blur'
     />
     <Heading>

@@ -23,7 +23,6 @@ export default function Project({ title, description, coverImage, children }: Pr
             <Image
                 src={coverImage}
                 alt={title as string}
-                loading='eager'
                 placeholder='blur'
             />
 

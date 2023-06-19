@@ -31,7 +31,6 @@ export default function Contact()
                         alt='LinkedIn'
                         className='object-contain bg-teal-100 hover:bg-teal-50 p-3 rounded-xl shadow-md transition-colors duration-500 ease-in-out'
                         height={88}
-                        loading='eager'
                         placeholder='blur'
                     />
                 </Link>
@@ -41,7 +40,6 @@ export default function Contact()
                         alt='Facebook'
                         className='object-contain bg-teal-100 hover:bg-teal-50 p-3 rounded-xl shadow-md transition-colors duration-500 ease-in-out'
                         height={88}
-                        loading='eager'
                         placeholder='blur'
                     />
                 </Link>
@@ -51,7 +49,6 @@ export default function Contact()
                         alt='Instagram'
                         className='object-contain bg-teal-100 hover:bg-teal-50 p-3 rounded-xl shadow-md transition-colors duration-500 ease-in-out'
                         height={88}
-                        loading='eager'
                         placeholder='blur'
                     />
                 </Link>
