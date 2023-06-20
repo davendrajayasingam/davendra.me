@@ -14,7 +14,7 @@ import quizResult from '@/app/projects/supermom/images/supermom-quiz-result.png'
 import dashboardImage1 from '@/app/projects/supermom/images/supermom-dashboard-1.png'
 import dashboardImage2 from '@/app/projects/supermom/images/supermom-dashboard-2.png'
 
-const metadataTitle = 'SUPERMOM'
+const metadataTitle = 'NESTLÉ SUPERMOM'
 const metadataDescription = 'The SUPERMOM campaign was launched by Nestlé Malaysia to promote their products across four regions, Malaysia, Singapore, Vietnam, and Thailand.'
 
 export const metadata = {

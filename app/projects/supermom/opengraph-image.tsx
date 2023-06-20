@@ -5,7 +5,7 @@ import coverImage from '@/app/projects/supermom/images/supermom-cover.png'
 
 export const runtime = 'edge'
 
-export const alt = 'SUPERMOM'
+export const alt = 'NESTLÉ SUPERMOM'
 export const size = {
     width: 1200,
     height: 630
@@ -35,7 +35,7 @@ export default async function Image()
                         height={100}
                     />
                     <p
-                        tw='font-bold text-teal-100 text-6xl ml-4'
+                        tw='font-bold text-teal-100 text-5xl ml-4'
                         style={{
                             fontFamily: '"Righteous"'
                         }}

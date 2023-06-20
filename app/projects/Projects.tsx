@@ -6,10 +6,12 @@ import Title from '@/app/(ui)/Title'
 import { metadata as sixidesMetadata } from '@/app/projects/sixides/page'
 import { metadata as theEndMetadata } from '@/app/projects/the-end/page'
 import { metadata as supermomMetadata } from '@/app/projects/supermom/page'
+import { metadata as samaSamaHuatMetadata } from '@/app/projects/sama-sama-huat/page'
 
 import sixidesCoverImage from '@/app/projects/sixides/images/sixides-cover.png'
 import theEndCoverImage from '@/app/projects/the-end/images/the-end-cover.png'
 import supermomCoverImage from '@/app/projects/supermom/images/supermom-cover.png'
+import samaSamaHuatCoverImage from '@/app/projects/sama-sama-huat/images/huat-cover.png'
 
 // used in sitemap.ts
 export const projects = [
@@ -30,6 +32,12 @@ export const projects = [
         title: theEndMetadata.title,
         category: 'Gamification',
         coverImage: theEndCoverImage
+    },
+    {
+        slug: 'sama-sama-huat',
+        title: samaSamaHuatMetadata.title,
+        category: 'Gamification',
+        coverImage: samaSamaHuatCoverImage
     }
 ]
 

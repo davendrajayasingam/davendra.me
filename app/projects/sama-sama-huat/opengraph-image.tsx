@@ -1,11 +1,11 @@
 /* eslint-disable @next/next/no-img-element */
 import { ImageResponse } from 'next/server'
 
-import coverImage from '@/app/projects/sixides/images/sixides-cover.png'
+import coverImage from '@/app/projects/sama-sama-huat/images/huat-cover.png'
 
 export const runtime = 'edge'
 
-export const alt = 'SIXiDES'
+export const alt = 'LOTUS\'S SAMA-SAMA HUAT'
 export const size = {
     width: 1200,
     height: 630

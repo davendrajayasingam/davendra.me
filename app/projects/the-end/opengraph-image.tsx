@@ -35,7 +35,7 @@ export default async function Image()
                         height={100}
                     />
                     <p
-                        tw='font-bold text-teal-100 text-6xl ml-4'
+                        tw='font-bold text-teal-100 text-5xl ml-4'
                         style={{
                             fontFamily: '"Righteous"'
                         }}
