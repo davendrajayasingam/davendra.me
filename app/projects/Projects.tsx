@@ -7,11 +7,13 @@ import { metadata as sixidesMetadata } from '@/app/projects/sixides/page'
 import { metadata as theEndMetadata } from '@/app/projects/the-end/page'
 import { metadata as supermomMetadata } from '@/app/projects/supermom/page'
 import { metadata as samaSamaHuatMetadata } from '@/app/projects/sama-sama-huat/page'
+import { metadata as tysonfscMetadata } from '@/app/projects/tysonfsc/page'
 
 import sixidesCoverImage from '@/app/projects/sixides/images/sixides-cover.png'
 import theEndCoverImage from '@/app/projects/the-end/images/the-end-cover.png'
 import supermomCoverImage from '@/app/projects/supermom/images/supermom-cover.png'
 import samaSamaHuatCoverImage from '@/app/projects/sama-sama-huat/images/huat-cover.png'
+import tysonfscCoverImage from '@/app/projects/tysonfsc/images/tysonfsc-cover.png'
 
 // used in sitemap.ts
 export const projects = [
@@ -30,7 +32,7 @@ export const projects = [
     {
         slug: 'the-end',
         title: theEndMetadata.title,
-        category: 'Gamification',
+        category: 'Microsites',
         coverImage: theEndCoverImage
     },
     {
@@ -38,6 +40,12 @@ export const projects = [
         title: samaSamaHuatMetadata.title,
         category: 'Gamification',
         coverImage: samaSamaHuatCoverImage
+    },
+    {
+        slug: 'tysonfsc',
+        title: tysonfscMetadata.title,
+        category: 'Flipbook',
+        coverImage: tysonfscCoverImage
     }
 ]
 
