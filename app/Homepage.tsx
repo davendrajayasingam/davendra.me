@@ -57,6 +57,7 @@ export default function Homepage()
                 placeholder='blur'
                 width={640}
                 height={640}
+                priority
             />
 
             <Heading className='mt-4'>
