@@ -8,15 +8,23 @@ import { metadata as theEndMetadata } from '@/app/projects/the-end/page'
 import { metadata as supermomMetadata } from '@/app/projects/supermom/page'
 import { metadata as samaSamaHuatMetadata } from '@/app/projects/sama-sama-huat/page'
 import { metadata as tysonfscMetadata } from '@/app/projects/tysonfsc/page'
+import { metadata as salamLebaranMetadata } from '@/app/projects/salam-lebaran/page'
 
 import sixidesCoverImage from '@/app/projects/sixides/images/sixides-cover.png'
 import theEndCoverImage from '@/app/projects/the-end/images/the-end-cover.png'
 import supermomCoverImage from '@/app/projects/supermom/images/supermom-cover.png'
 import samaSamaHuatCoverImage from '@/app/projects/sama-sama-huat/images/huat-cover.png'
 import tysonfscCoverImage from '@/app/projects/tysonfsc/images/tysonfsc-cover.png'
+import salamLebaranCoverImage from '@/app/projects/salam-lebaran/images/salamlebaran-cover.png'
 
 // used in sitemap.ts
 export const projects = [
+    {
+        slug: 'salam-lebaran',
+        title: salamLebaranMetadata.title,
+        category: 'Event',
+        coverImage: salamLebaranCoverImage
+    },
     {
         slug: 'sixides',
         title: sixidesMetadata.title,
@@ -26,19 +34,13 @@ export const projects = [
     {
         slug: 'supermom',
         title: supermomMetadata.title,
-        category: 'Gamification',
+        category: 'Campaign',
         coverImage: supermomCoverImage
-    },
-    {
-        slug: 'the-end',
-        title: theEndMetadata.title,
-        category: 'Microsites',
-        coverImage: theEndCoverImage
     },
     {
         slug: 'sama-sama-huat',
         title: samaSamaHuatMetadata.title,
-        category: 'Gamification',
+        category: 'Campaign',
         coverImage: samaSamaHuatCoverImage
     },
     {
@@ -46,6 +48,12 @@ export const projects = [
         title: tysonfscMetadata.title,
         category: 'Flipbook',
         coverImage: tysonfscCoverImage
+    },
+    {
+        slug: 'the-end',
+        title: theEndMetadata.title,
+        category: 'Microsites',
+        coverImage: theEndCoverImage
     }
 ]
 
