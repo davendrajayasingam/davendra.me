@@ -9,6 +9,7 @@ import { metadata as supermomMetadata } from '@/app/projects/supermom/page'
 import { metadata as samaSamaHuatMetadata } from '@/app/projects/sama-sama-huat/page'
 import { metadata as tysonfscMetadata } from '@/app/projects/tysonfsc/page'
 import { metadata as salamLebaranMetadata } from '@/app/projects/salam-lebaran/page'
+import { metadata as workdayExperienceSurveyMetadata } from '@/app/projects/workday-experience-survey/page'
 
 import sixidesCoverImage from '@/app/projects/sixides/images/sixides-cover.png'
 import theEndCoverImage from '@/app/projects/the-end/images/the-end-cover.png'
@@ -16,6 +17,7 @@ import supermomCoverImage from '@/app/projects/supermom/images/supermom-cover.pn
 import samaSamaHuatCoverImage from '@/app/projects/sama-sama-huat/images/huat-cover.png'
 import tysonfscCoverImage from '@/app/projects/tysonfsc/images/tysonfsc-cover.png'
 import salamLebaranCoverImage from '@/app/projects/salam-lebaran/images/salamlebaran-cover.png'
+import workdayExperienceSurveyCoverImage from '@/app/projects/workday-experience-survey/images/workdayexperiencesurvey-cover.png'
 
 // used in sitemap.ts
 export const projects = [
@@ -36,6 +38,12 @@ export const projects = [
         title: supermomMetadata.title,
         category: 'Campaign',
         coverImage: supermomCoverImage
+    },
+    {
+        slug: 'workday-experience-survey',
+        title: workdayExperienceSurveyMetadata.title,
+        category: 'Survey',
+        coverImage: workdayExperienceSurveyCoverImage
     },
     {
         slug: 'sama-sama-huat',
