@@ -85,7 +85,7 @@ export default function RootLayout({ children }: Props)
       className={righteous.variable}
     >
       <head />
-      <body className='font-sans bg-gradient-to-r from-teal-600 to-emerald-600'>
+      <body className='font-sans bg-teal-600'>
         <Header />
         <main>
           {children}
