@@ -1,6 +1,6 @@
 import OpenGraphImage from '@/app/OpenGraphImage'
 
-import coverImage from '@/app/projects/tysonfsc/images/workdayexperiencesurvey-cover.png'
+import coverImage from '@/app/projects/workday-experience-survey/images/workdayexperiencesurvey-cover.png'
 
 export const runtime = 'edge'
 
