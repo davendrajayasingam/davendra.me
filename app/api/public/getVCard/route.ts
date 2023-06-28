@@ -28,7 +28,7 @@ export async function GET(request: NextRequest)
   vCard.socialUrls.facebook = 'https://www.facebook.com/davendra'
   vCard.socialUrls.linkedIn = 'https://www.linkedin.com/in/davendra-jayasingam/'
   vCard.socialUrls.instagram = 'https://www.instagram.com/davendra.me/'
-  // vCard.cellPhone = process.env.PERSONAL_MOBILE!
+  vCard.cellPhone = process.env.PERSONAL_MOBILE!
 
 
   // https://stackoverflow.com/questions/71192991/social-media-links-appear-broken-in-vcf-format
