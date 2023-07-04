@@ -20,7 +20,7 @@ export async function GET(request: NextRequest)
   //set properties
   vCard.firstName = 'Davendra'
   vCard.lastName = 'Jayasingam'
-  vCard.email = process.env.PERSONAL_EMAIL!
+  vCard.email = process.env.NEXT_PUBLIC_PERSONAL_EMAIL!
   vCard.photo.embedFromString(imageBase64, contentType)
   vCard.title = 'Full-Stack Web Developer'
   vCard.url = 'https://davendra.me'
@@ -28,7 +28,7 @@ export async function GET(request: NextRequest)
   vCard.socialUrls.facebook = 'https://www.facebook.com/davendra'
   vCard.socialUrls.linkedIn = 'https://www.linkedin.com/in/davendra-jayasingam/'
   vCard.socialUrls.instagram = 'https://www.instagram.com/davendra.me/'
-  vCard.cellPhone = process.env.PERSONAL_MOBILE!
+  vCard.cellPhone = process.env.NEXT_PUBLIC_PERSONAL_MOBILE!
 
 
   // https://stackoverflow.com/questions/71192991/social-media-links-appear-broken-in-vcf-format
