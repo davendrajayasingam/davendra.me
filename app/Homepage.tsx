@@ -15,7 +15,7 @@ export default function Homepage()
     const showSkillWithTooltip = (skill: string, tooltip: string) => (
         <div className='p-2'>
             <p
-                className='bg-teal-800 font-medium text-teal-100 px-6 py-2 rounded-full cursor-pointer'
+                className='editable bg-teal-800 font-medium text-teal-100 px-6 py-2 rounded-full cursor-pointer'
                 data-tooltip-id={skill}
                 data-tooltip-content={tooltip}
             >
@@ -23,17 +23,17 @@ export default function Homepage()
             </p>
             <Tooltip
                 id={skill}
-                className='max-w-[12rem]'
+                className='editable max-w-[12rem]'
             />
         </div>
     )
 
     const showSkillCategory = (category: string, children: React.ReactNode) => (
-        <div className='mt-4'>
-            <Paragraph className='text-center'>
+        <div className='editable mt-4'>
+            <Paragraph className='editable text-center'>
                 {category}
             </Paragraph>
-            <div className='mt-2 flex flex-wrap items-center justify-center -ml-2'>
+            <div className='editable mt-2 flex flex-wrap items-center justify-center -ml-2'>
                 {children}
             </div>
         </div>
@@ -42,31 +42,31 @@ export default function Homepage()
     return (
         <div className='p-4 max-w-xl mx-auto'>
 
-            <Heading className='mt-4'>
+            <Heading className='editable mt-4'>
                 Hello World!
             </Heading>
 
-            <Title className='mt-4 mb-8'>
+            <Title className='editable mt-4 mb-8'>
                 I'm Dave,
             </Title>
 
             <Image
                 src={profilePicture}
                 alt='Davendra Jayasingam'
-                className='object-contain rounded-full max-w-xs mx-auto'
+                className='editable object-contain rounded-full max-w-xs mx-auto'
                 placeholder='blur'
                 width={640}
                 height={640}
                 priority
             />
 
-            <Heading className='mt-4'>
+            <Heading className='editable mt-4'>
                 a Full-Stack
                 <br />
                 Web Developer.
             </Heading>
 
-            <Paragraph className='mt-4'>
+            <Paragraph className='editable mt-4'>
                 I work with brands and creative agencies to bring websites and marketing campaigns to life. I'm currently a Lead Web Developer at&nbsp;
                 <ExternalLink href='https://sixides.com'>
                     SIXiDES
@@ -75,11 +75,11 @@ export default function Homepage()
 
             <Divider />
 
-            <Heading className='mt-4'>
+            <Heading className='editable mt-4'>
                 About
             </Heading>
 
-            <Paragraph className='mt-4'>
+            <Paragraph className='editable mt-4'>
                 I absolutely love programming. Seriously. Can't get enough of it. I started out in the early days of the web by creating sites using Adobe Dreamweaver. When I noticed the limitations of the software, I moved on to learn HTML + CSS + JavaScript.
                 <br />
                 <br />
@@ -128,7 +128,7 @@ export default function Homepage()
 
             <Divider />
 
-            <Heading className='mt-4 mb-8'>
+            <Heading className='editable mt-4 mb-8'>
                 Knowledge
             </Heading>
 
