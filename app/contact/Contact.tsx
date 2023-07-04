@@ -54,6 +54,14 @@ export default function Contact()
                 </Link>
             </div>
 
+            <Divider />
+
+            <Heading className='mb-4'>
+                Email
+            </Heading>
+
+            <ContactForm />
+
         </div>
     )
 }
