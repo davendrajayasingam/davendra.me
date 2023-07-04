@@ -57,19 +57,6 @@ export default function Contact()
             <Divider />
 
             <Heading className='mb-4'>
-                Card
-            </Heading>
-
-            <ButtonLink
-                href='/api/public/getVCard'
-                className='w-72 mx-auto'
-            >
-                Download Business Card
-            </ButtonLink>
-
-            <Divider />
-
-            <Heading className='mb-4'>
                 Email
             </Heading>
 
