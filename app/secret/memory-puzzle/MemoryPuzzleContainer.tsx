@@ -4,17 +4,17 @@ import { StaticImageData } from 'next/image'
 
 import MemoryPuzzleGame from '@/app/secret/memory-puzzle/MemoryPuzzleGame'
 import PuzzleHeader from '@/app/secret/PuzzleHeader'
-
-import cardBack from '@/app/secret/memory-puzzle/images/card-back.png'
-import cardFront1 from '@/app/secret/memory-puzzle/images/card-front-1.png'
-import cardFront2 from '@/app/secret/memory-puzzle/images/card-front-2.png'
-import cardFront3 from '@/app/secret/memory-puzzle/images/card-front-3.png'
-import cardFront4 from '@/app/secret/memory-puzzle/images/card-front-4.png'
-import cardFront5 from '@/app/secret/memory-puzzle/images/card-front-5.png'
-import cardFront6 from '@/app/secret/memory-puzzle/images/card-front-6.png'
-import cardFront7 from '@/app/secret/memory-puzzle/images/card-front-7.png'
-import cardFront8 from '@/app/secret/memory-puzzle/images/card-front-8.png'
 import PuzzleFooter from '../PuzzleFooter'
+
+const cardBack = '/images/secret/memory-puzzle/card-back.png'
+const cardFront1 = '/images/secret/memory-puzzle/card-front-1.png'
+const cardFront2 = '/images/secret/memory-puzzle/card-front-2.png'
+const cardFront3 = '/images/secret/memory-puzzle/card-front-3.png'
+const cardFront4 = '/images/secret/memory-puzzle/card-front-4.png'
+const cardFront5 = '/images/secret/memory-puzzle/card-front-5.png'
+const cardFront6 = '/images/secret/memory-puzzle/card-front-6.png'
+const cardFront7 = '/images/secret/memory-puzzle/card-front-7.png'
+const cardFront8 = '/images/secret/memory-puzzle/card-front-8.png'
 
 type Props = {
     onCompleted: () => void
@@ -31,9 +31,9 @@ export default function MemoryPuzzleContainer({ onCompleted, onAbandoned }: Prop
     {
         const newLoadedImages = [...loadedImages]
 
-        const loadImageHelper = async (imageSrc: StaticImageData, index: number) =>
+        const loadImageHelper = async (imageSrc: string, index: number) =>
         {
-            return fetch(imageSrc.src)
+            return fetch(imageSrc)
                 .then(res => res.blob())
                 .then(blob => new Promise<string>((resolve, reject) =>
                 {

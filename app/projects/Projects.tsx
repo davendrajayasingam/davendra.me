@@ -83,7 +83,7 @@ export default function Projects()
                                 </p>
                             </div>
                             <div className='pl-12'>
-                                <Image
+                                <img
                                     src={project.coverImage}
                                     alt={project.title as string}
                                     className='rounded-tl-xl rounded-br-xl aspect-video object-cover object-center'

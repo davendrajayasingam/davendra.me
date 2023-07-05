@@ -5,7 +5,7 @@ import PuzzleHeader from '@/app/secret/PuzzleHeader'
 import PicturePuzzleGame from '@/app/secret/picture-puzzle/PicturePuzzleGame'
 import PuzzleFooter from '@/app/secret/PuzzleFooter'
 
-import puzzleImg from '@/app/secret/picture-puzzle/images/picture.png'
+const puzzleImg = '/images/secret/picture-puzzle/picture.png'
 
 type Props = {
     onCompleted: () => void
@@ -20,7 +20,7 @@ export default function PicturePuzzleContainer({ onCompleted, onAbandoned }: Pro
 
     const loadImage = () => 
     {
-        fetch(puzzleImg.src)
+        fetch(puzzleImg)
             .then(res => res.blob())
             .then(blob => new Promise<string>((resolve, reject) =>
             {

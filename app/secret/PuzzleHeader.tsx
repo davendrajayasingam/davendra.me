@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import Image, { StaticImageData } from 'next/image'
 
 import Paragraph from '@/app/(ui)/Paragraph'
@@ -6,7 +7,7 @@ import Title from '@/app/(ui)/Title'
 type Props = {
     title: string
     texts: React.ReactNode[] | string[],
-    image?: StaticImageData
+    image?: string
 }
 
 export default function PuzzleHeader({ title, texts, image }: Props)
@@ -18,7 +19,7 @@ export default function PuzzleHeader({ title, texts, image }: Props)
             </Title>
 
             {
-                image && <Image
+                image && <img
                     src={image}
                     alt={title}
                     className='w-full h-auto mx-auto mb-4'

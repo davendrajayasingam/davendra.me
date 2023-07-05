@@ -55,9 +55,9 @@ export default function Contact()
                 </Link>
             </div>
 
-            <Divider />
+            {/* <Divider />
 
-            {/* <Heading className='mb-4'>
+            <Heading className='mb-4'>
                 Email
             </Heading>
 

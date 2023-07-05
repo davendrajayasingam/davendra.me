@@ -6,11 +6,11 @@ import PuzzleHeader from '@/app/secret/PuzzleHeader'
 import SudokuPuzzleGame from '@/app/secret/sudoku-puzzle/SudokuPuzzleGame'
 import PuzzleFooter from '@/app/secret/PuzzleFooter'
 
-import icon0 from '@/app/secret/sudoku-puzzle/images/icon-0.png'
-import icon1 from '@/app/secret/sudoku-puzzle/images/icon-1.png'
-import icon2 from '@/app/secret/sudoku-puzzle/images/icon-2.png'
-import icon3 from '@/app/secret/sudoku-puzzle/images/icon-3.png'
-import icon4 from '@/app/secret/sudoku-puzzle/images/icon-4.png'
+const icon0 = '/images/secret/sudoku-puzzle/icon-0.png'
+const icon1 = '/images/secret/sudoku-puzzle/icon-1.png'
+const icon2 = '/images/secret/sudoku-puzzle/icon-2.png'
+const icon3 = '/images/secret/sudoku-puzzle/icon-3.png'
+const icon4 = '/images/secret/sudoku-puzzle/icon-4.png'
 
 type Props = {
     onCompleted: () => void
@@ -27,9 +27,9 @@ export default function SudokuPuzzleContainer({ onCompleted, onAbandoned }: Prop
     {
         const newLoadedImages = [...loadedImages]
 
-        const loadImageHelper = async (imageSrc: StaticImageData, index: number) =>
+        const loadImageHelper = async (imageSrc: string, index: number) =>
         {
-            return fetch(imageSrc.src)
+            return fetch(imageSrc)
                 .then(res => res.blob())
                 .then(blob => new Promise<string>((resolve, reject) =>
                 {

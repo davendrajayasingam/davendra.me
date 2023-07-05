@@ -1,11 +1,12 @@
+/* eslint-disable @next/next/no-img-element */
 import Image, { StaticImageData } from 'next/image'
 
 import { classNames } from '@/utils/helperFunctions'
-
-import questImage1 from '@/app/secret/images/quest-1.png'
-import questImage2 from '@/app/secret/images/quest-2.png'
-import questImage3 from '@/app/secret/images/quest-3.png'
 import PuzzleHeader from './PuzzleHeader'
+
+const questImage1 = '/images/secret/quest-1.png'
+const questImage2 = '/images/secret/quest-2.png'
+const questImage3 = '/images/secret/quest-3.png'
 
 type Props = {
     completedStep: number
@@ -14,7 +15,7 @@ type Props = {
 
 export default function PuzzleIntro({ completedStep, activatePuzzle }: Props)
 {
-    const displayPuzzle = (imageSrc: StaticImageData, puzzleNumber: number, description: string) => (
+    const displayPuzzle = (imageSrc: string, puzzleNumber: number, description: string) => (
         <button
             onClick={() => activatePuzzle(puzzleNumber)}
             className={classNames(
@@ -23,7 +24,7 @@ export default function PuzzleIntro({ completedStep, activatePuzzle }: Props)
                 completedStep <= (puzzleNumber - 1) ? 'hover:brightness-125' : ''
             )}
         >
-            <Image
+            <img
                 src={imageSrc}
                 alt='Reveal'
                 className='rounded-t-xl'

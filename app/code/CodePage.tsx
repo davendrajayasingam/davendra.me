@@ -78,7 +78,7 @@ const CodePage = ({ repoData }: Props) =>
                     <div className='overflow-scroll mt-24'>
                         {
                             ['png', 'jpg', 'jpeg', 'ico'].includes(selectedFileData.extension)
-                                ? <ImageBlock src={selectedFileData.url} />
+                                ? <imgBlock src={selectedFileData.url} />
                                 : <CodeBlock repoFileData={selectedFileData} />
                         }
                     </div>

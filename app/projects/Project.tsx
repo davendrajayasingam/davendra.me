@@ -22,7 +22,7 @@ export default function Project({ title, description, coverImage, children }: Pr
                 {title as string}
             </Title>
 
-            <Image
+            <img
                 src={coverImage}
                 alt={title as string}
                 width={1200}

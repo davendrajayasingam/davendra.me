@@ -2,7 +2,7 @@ import { classNames } from '@/utils/helperFunctions'
 import PuzzleHeader from '@/app/secret/PuzzleHeader'
 import Confetti from '@/app/secret/Confetti'
 
-import outroImage from '@/app/secret/images/outro-bg.png'
+const outroImage = '/images/secret/outro-bg.png'
 
 type Props = {
     onRestart: () => void

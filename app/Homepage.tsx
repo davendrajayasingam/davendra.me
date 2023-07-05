@@ -48,7 +48,7 @@ export default function Homepage()
                 I'm Dave,
             </Title>
 
-            <Image
+            <img
                 src='/images/davendra.png'
                 alt='Davendra Jayasingam'
                 className='editable object-contain rounded-full max-w-xs mx-auto'

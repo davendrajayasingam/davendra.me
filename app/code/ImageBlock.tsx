@@ -8,7 +8,7 @@ type Props = {
 const ImageBlock = ({ src, className }: Props) =>
 {
     return <div className={className}>
-        <Image
+        <img
             src={src}
             alt=''
             fill
