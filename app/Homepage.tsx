@@ -54,7 +54,6 @@ export default function Homepage()
                 className='editable object-contain rounded-full max-w-xs mx-auto'
                 width={640}
                 height={640}
-                priority
             />
 
             <Heading className='editable mt-4'>
