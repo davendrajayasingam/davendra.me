@@ -1,4 +1,4 @@
-import Image from 'next/image'
+/* eslint-disable @next/next/no-img-element */
 import Link from 'next/link'
 
 import Project from '@/app/projects/Project'
@@ -6,18 +6,18 @@ import Paragraph from '@/app/(ui)/Paragraph'
 import Heading from '@/app/(ui)/Heading'
 import ExternalLink from '@/app/(ui)/ExternalLink'
 
-import coverImage from '@/app/projects/salam-lebaran/images/salamlebaran-cover.png'
-import loginImage from '@/app/projects/salam-lebaran/images/salamlebaran-login.png'
-import questsImage from '@/app/projects/salam-lebaran/images/salamlebaran-quests.png'
-import rewardsImage from '@/app/projects/salam-lebaran/images/salamlebaran-rewards.png'
-import rewardsClaimImage from '@/app/projects/salam-lebaran/images/salamlebaran-rewards-claim.png'
-import redeemImage from '@/app/projects/salam-lebaran/images/salamlebaran-redeem.png'
-import dashboardImage from '@/app/projects/salam-lebaran/images/salamlebaran-dashboard.png'
-import dashboardCheckinImage from '@/app/projects/salam-lebaran/images/salamlebaran-dashboard-checkin.png'
-import dashboardParticipantsImage from '@/app/projects/salam-lebaran/images/salamlebaran-dashboard-participants.png'
-import dashboardLuckyDrawImage from '@/app/projects/salam-lebaran/images/salamlebaran-dashboard-luckydraw.png'
-import dashboardLuckyDrawImage2 from '@/app/projects/salam-lebaran/images/salamlebaran-dashboard-luckydraw-2.png'
-import dashboardConfigImage from '@/app/projects/salam-lebaran/images/salamlebaran-dashboard-config.png'
+const coverImage = '/images/projects/salam-lebaran/salamlebaran-cover.png'
+const loginImage = '/images/projects/salam-lebaran/salamlebaran-login.png'
+const questsImage = '/images/projects/salam-lebaran/salamlebaran-quests.png'
+const rewardsImage = '/images/projects/salam-lebaran/salamlebaran-rewards.png'
+const rewardsClaimImage = '/images/projects/salam-lebaran/salamlebaran-rewards-claim.png'
+const redeemImage = '/images/projects/salam-lebaran/salamlebaran-redeem.png'
+const dashboardImage = '/images/projects/salam-lebaran/salamlebaran-dashboard.png'
+const dashboardCheckinImage = '/images/projects/salam-lebaran/salamlebaran-dashboard-checkin.png'
+const dashboardParticipantsImage = '/images/projects/salam-lebaran/salamlebaran-dashboard-participants.png'
+const dashboardLuckyDrawImage = '/images/projects/salam-lebaran/salamlebaran-dashboard-luckydraw.png'
+const dashboardLuckyDrawImage2 = '/images/projects/salam-lebaran/salamlebaran-dashboard-luckydraw-2.png'
+const dashboardConfigImage = '/images/projects/salam-lebaran/salamlebaran-dashboard-config.png'
 
 const metadataTitle = 'Maxis Salam Lebaran'
 const metadataDescription = 'The Salam Lebaran campaign was launched by Maxis for an internal open house event during Hari Raya 2023.'
@@ -53,10 +53,9 @@ export default async function Page()
         User Journey
       </Heading>
 
-      <Image
+      <img
         src={loginImage}
         alt='Login'
-        placeholder='blur'
       />
 
       <Paragraph className='px-4 max-w-xl mx-auto'>
@@ -67,10 +66,9 @@ export default async function Page()
         Quests
       </Heading>
 
-      <Image
+      <img
         src={questsImage}
         alt='Quests'
-        placeholder='blur'
       />
 
       <Paragraph className='px-4 max-w-xl mx-auto'>
@@ -84,30 +82,27 @@ export default async function Page()
         Rewards
       </Heading>
 
-      <Image
+      <img
         src={rewardsImage}
         alt='Rewards'
-        placeholder='blur'
       />
 
       <Paragraph className='px-4 max-w-xl mx-auto'>
         The quests are designed to encourage the participants to visit all the booths at the event. In return, each completed quest allows participants to claim an extra ticket for a lucky draw held at multiple intervals throughout the event.
       </Paragraph>
 
-      <Image
+      <img
         src={rewardsClaimImage}
         alt='Rewards Claim'
-        placeholder='blur'
       />
 
       <Paragraph className='px-4 max-w-xl mx-auto'>
         Participants can also claim a door gift reward. This reward does not require them to complete any quests. They can claim it by clicking the 'Redeem' button at the prize redemption counter.
       </Paragraph>
 
-      <Image
+      <img
         src={redeemImage}
         alt='Redeem'
-        placeholder='blur'
       />
 
       <Paragraph className='px-4 max-w-xl mx-auto'>
@@ -118,30 +113,27 @@ export default async function Page()
         Dashboard
       </Heading>
 
-      <Image
+      <img
         src={dashboardImage}
         alt='Dashboard'
-        placeholder='blur'
       />
 
       <Paragraph className='px-4 max-w-xl mx-auto'>
         The dashboard provides many options for the event organizers to manage the event. One option is the ability to scan QR codes to check-in participants. Only participants that have checked in can complete quests, claim rewards, and participate in the lucky draw.
       </Paragraph>
 
-      <Image
+      <img
         src={dashboardCheckinImage}
         alt='Check In'
-        placeholder='blur'
       />
 
       <Paragraph className='px-4 max-w-xl mx-auto'>
         The organizers can scan the QR code by using the camera in the 'Scan' tab, or by searching for a participant in the 'Search' tab.
       </Paragraph>
 
-      <Image
+      <img
         src={dashboardParticipantsImage}
         alt='Participants'
-        placeholder='blur'
       />
 
       <Paragraph className='px-4 max-w-xl mx-auto'>
@@ -152,20 +144,18 @@ export default async function Page()
         Lucky Draw
       </Heading>
 
-      <Image
+      <img
         src={dashboardLuckyDrawImage}
         alt='Lucky Draw'
-        placeholder='blur'
       />
 
       <Paragraph className='px-4 max-w-xl mx-auto'>
         A lucky draw session can be triggered from the 'Lucky Draw' tab. A list of all the participants that have checked in will be shown, and the organizers can click the 'Launch' button to start a lucky draw.
       </Paragraph>
 
-      <Image
+      <img
         src={dashboardLuckyDrawImage2}
         alt='Lucky Draw'
-        placeholder='blur'
       />
 
       <Paragraph className='px-4 max-w-xl mx-auto'>
@@ -182,10 +172,9 @@ export default async function Page()
         CMS
       </Heading>
 
-      <Image
+      <img
         src={dashboardConfigImage}
         alt='CMS'
-        placeholder='blur'
       />
 
       <Paragraph className='px-4 max-w-xl mx-auto'>

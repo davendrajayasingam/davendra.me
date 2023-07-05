@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import Image, { StaticImageData } from 'next/image'
 
 import Project from '@/app/projects/Project'
@@ -5,15 +6,15 @@ import Paragraph from '@/app/(ui)/Paragraph'
 import Heading from '@/app/(ui)/Heading'
 import ExternalLink from '@/app/(ui)/ExternalLink'
 
-import coverImage from '@/app/projects/the-end/images/the-end-cover.png'
-import pulseNewsImage from '@/app/projects/the-end/images/the-end-pulse-news.png'
-import vanderCorpImage from '@/app/projects/the-end/images/the-end-vander-corporation.png'
-import earthDogsImage from '@/app/projects/the-end/images/the-end-earth-dogs.png'
-import outThereImage from '@/app/projects/the-end/images/the-end-out-there.png'
-import tigrisImage from '@/app/projects/the-end/images/the-end-tigris-world.png'
-import askAlexImage from '@/app/projects/the-end/images/the-end-ask-alex-blog.png'
-import wroImage from '@/app/projects/the-end/images/the-end-world-relocation-organization.png'
-import ourJourneyImage from '@/app/projects/the-end/images/the-end-our-journey-your-future.png'
+const coverImage = 'images/projects/the-end/the-end-cover.png'
+const pulseNewsImage = 'images/projects/the-end/the-end-pulse-news.png'
+const vanderCorpImage = 'images/projects/the-end/the-end-vander-corporation.png'
+const earthDogsImage = 'images/projects/the-end/the-end-earth-dogs.png'
+const outThereImage = 'images/projects/the-end/the-end-out-there.png'
+const tigrisImage = 'images/projects/the-end/the-end-tigris-world.png'
+const askAlexImage = 'images/projects/the-end/the-end-ask-alex-blog.png'
+const wroImage = 'images/projects/the-end/the-end-world-relocation-organization.png'
+const ourJourneyImage = 'images/projects/the-end/the-end-our-journey-your-future.png'
 
 const metadataTitle = 'The End'
 const metadataDescription = 'The End is a series of microsites that is the first chapter of a multi-part initiative leading up to the launch of Emergent Game\'s web3 triple-A MMO, Resurgence'
@@ -31,11 +32,10 @@ export const metadata = {
 
 export default async function Page()
 {
-  const showExternalLink = (link: string, text: string, cover: StaticImageData, description: string) => <>
-    <Image
+  const showExternalLink = (link: string, text: string, cover: string, description: string) => <>
+    <img
       src={cover}
       alt={text}
-      placeholder='blur'
     />
     <Heading>
       {text}

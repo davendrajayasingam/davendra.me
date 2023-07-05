@@ -8,8 +8,6 @@ import Paragraph from '@/app/(ui)/Paragraph'
 import ExternalLink from '@/app/(ui)/ExternalLink'
 import Divider from '@/app/(ui)/Divider'
 
-import profilePicture from '@/public/images/davendra.png'
-
 export default function Homepage()
 {
     const showSkillWithTooltip = (skill: string, tooltip: string) => (
@@ -51,10 +49,9 @@ export default function Homepage()
             </Title>
 
             <Image
-                src={profilePicture}
+                src='/images/davendra.png'
                 alt='Davendra Jayasingam'
                 className='editable object-contain rounded-full max-w-xs mx-auto'
-                placeholder='blur'
                 width={640}
                 height={640}
                 priority

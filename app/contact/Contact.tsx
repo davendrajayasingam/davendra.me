@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -7,9 +8,9 @@ import Divider from '@/app/(ui)/Divider'
 import ButtonLink from '@/app/(ui)/ButtonLink'
 import ContactForm from '@/app/contact/ContactForm'
 
-import linkedInLogo from '@/app/contact/images/linkedin-logo.png'
-import facebookLogo from '@/app/contact/images/facebook-logo.png'
-import instagramLogo from '@/app/contact/images/instagram-logo.png'
+const linkedInLogo = '/images/linkedin-logo.png'
+const facebookLogo = '/images/facebook-logo.png'
+const instagramLogo = '/images/instagram-logo.png'
 
 export default function Contact()
 {
@@ -26,41 +27,41 @@ export default function Contact()
 
             <div className='grid grid-cols-3 gap-2 place-items-center'>
                 <Link href='https://www.linkedin.com/in/davendra-jayasingam/'>
-                    <Image
+                    <img
                         src={linkedInLogo}
                         alt='LinkedIn'
-                        className='object-contain bg-teal-100 hover:bg-teal-50 p-3 rounded-xl shadow-md transition-colors duration-500 ease-in-out'
+                        className='object-cover bg-teal-100 hover:bg-teal-50 p-3 rounded-xl shadow-md transition-colors duration-500 ease-in-out'
                         height={88}
-                        placeholder='blur'
+                        width={88}
                     />
                 </Link>
                 <Link href='https://www.facebook.com/davendra'>
-                    <Image
+                    <img
                         src={facebookLogo}
                         alt='Facebook'
                         className='object-contain bg-teal-100 hover:bg-teal-50 p-3 rounded-xl shadow-md transition-colors duration-500 ease-in-out'
                         height={88}
-                        placeholder='blur'
+                        width={88}
                     />
                 </Link>
                 <Link href='https://www.instagram.com/davendra.me/'>
-                    <Image
+                    <img
                         src={instagramLogo}
                         alt='Instagram'
                         className='object-contain bg-teal-100 hover:bg-teal-50 p-3 rounded-xl shadow-md transition-colors duration-500 ease-in-out'
                         height={88}
-                        placeholder='blur'
+                        width={88}
                     />
                 </Link>
             </div>
 
             <Divider />
 
-            <Heading className='mb-4'>
+            {/* <Heading className='mb-4'>
                 Email
             </Heading>
 
-            <ContactForm />
+            <ContactForm /> */}
 
         </div>
     )

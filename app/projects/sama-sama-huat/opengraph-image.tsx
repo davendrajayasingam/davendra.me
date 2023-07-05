@@ -1,7 +1,5 @@
 import OpenGraphImage from '@/app/OpenGraphImage'
 
-import coverImage from '@/app/projects/sama-sama-huat/images/huat-cover.png'
-
 export const runtime = 'edge'
 
 export const alt = 'Lotus\'s Sama Sama Huat'
@@ -12,10 +10,12 @@ export const size = {
 
 export const contentType = 'image/png'
 
+const coverImage = 'images/projects/sama-sama-huat/huat-cover.png'
+
 export default async function Image() 
 {
     return OpenGraphImage({
         title: alt,
-        imageSrc: coverImage.src
+        imageSrc: coverImage
     })
 }

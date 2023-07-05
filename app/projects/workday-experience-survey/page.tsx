@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -6,10 +7,10 @@ import Paragraph from '@/app/(ui)/Paragraph'
 import Heading from '@/app/(ui)/Heading'
 import ExternalLink from '@/app/(ui)/ExternalLink'
 
-import coverImage from '@/app/projects/workday-experience-survey/images/workdayexperiencesurvey-cover.png'
-import surveySessionsImage from '@/app/projects/workday-experience-survey/images/workdayexperiencesurvey-sessions.png'
-import surveyFormImage from '@/app/projects/workday-experience-survey/images/workdayexperiencesurvey-form.png'
-import surveyDashboardImage from '@/app/projects/workday-experience-survey/images/workdayexperiencesurvey-dashboard.png'
+const coverImage = 'images/projects/workday-experience-survey/workdayexperiencesurvey-cover.png'
+const surveySessionsImage = 'images/projects/workday-experience-survey/workdayexperiencesurvey-sessions.png'
+const surveyFormImage = 'images/projects/workday-experience-survey/workdayexperiencesurvey-form.png'
+const surveyDashboardImage = 'images/projects/workday-experience-survey/workdayexperiencesurvey-dashboard.png'
 
 const metadataTitle = 'WORKDAY Experience Survey'
 const metadataDescription = 'A feedback survey for participants of the Workday Experience workshop.'
@@ -45,10 +46,9 @@ export default async function Page()
         Sessions
       </Heading>
 
-      <Image
+      <img
         src={surveySessionsImage}
         alt='Workday Experience Survey Sessions'
-        placeholder='blur'
       />
 
       <Paragraph className='px-4 max-w-xl mx-auto'>
@@ -59,10 +59,9 @@ export default async function Page()
         Form
       </Heading>
 
-      <Image
+      <img
         src={surveyFormImage}
         alt='Workday Experience Survey Form'
-        placeholder='blur'
       />
 
       <Paragraph className='px-4 max-w-xl mx-auto'>
@@ -73,10 +72,9 @@ export default async function Page()
         Dashboard
       </Heading>
 
-      <Image
+      <img
         src={surveyDashboardImage}
         alt='Workday Experience Survey Dashboard'
-        placeholder='blur'
       />
 
       <Paragraph className='px-4 max-w-xl mx-auto'>

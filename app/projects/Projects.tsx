@@ -11,57 +11,49 @@ import { metadata as tysonfscMetadata } from '@/app/projects/tysonfsc/page'
 import { metadata as salamLebaranMetadata } from '@/app/projects/salam-lebaran/page'
 import { metadata as workdayExperienceSurveyMetadata } from '@/app/projects/workday-experience-survey/page'
 
-import sixidesCoverImage from '@/app/projects/sixides/images/sixides-cover.png'
-import theEndCoverImage from '@/app/projects/the-end/images/the-end-cover.png'
-import supermomCoverImage from '@/app/projects/supermom/images/supermom-cover.png'
-import samaSamaHuatCoverImage from '@/app/projects/sama-sama-huat/images/huat-cover.png'
-import tysonfscCoverImage from '@/app/projects/tysonfsc/images/tysonfsc-cover.png'
-import salamLebaranCoverImage from '@/app/projects/salam-lebaran/images/salamlebaran-cover.png'
-import workdayExperienceSurveyCoverImage from '@/app/projects/workday-experience-survey/images/workdayexperiencesurvey-cover.png'
-
 // used in sitemap.ts
 export const projects = [
     {
         slug: 'salam-lebaran',
         title: salamLebaranMetadata.title,
         category: 'Event',
-        coverImage: salamLebaranCoverImage
+        coverImage: 'images/projects/salam-lebaran/salamlebaran-cover.png'
     },
     {
         slug: 'sixides',
         title: sixidesMetadata.title,
         category: 'Website',
-        coverImage: sixidesCoverImage
+        coverImage: 'images/projects/sixides/sixides-cover.png'
     },
     {
         slug: 'supermom',
         title: supermomMetadata.title,
         category: 'Campaign',
-        coverImage: supermomCoverImage
+        coverImage: 'images/projects/supermom/supermom-cover.png'
     },
     {
         slug: 'workday-experience-survey',
         title: workdayExperienceSurveyMetadata.title,
         category: 'Survey',
-        coverImage: workdayExperienceSurveyCoverImage
+        coverImage: 'images/projects/workday-experience-survey/workdayexperiencesurvey-cover.png'
     },
     {
         slug: 'sama-sama-huat',
         title: samaSamaHuatMetadata.title,
         category: 'Campaign',
-        coverImage: samaSamaHuatCoverImage
+        coverImage: 'images/projects/sama-sama-huat/huat-cover.png'
     },
     {
         slug: 'tysonfsc',
         title: tysonfscMetadata.title,
         category: 'Flipbook',
-        coverImage: tysonfscCoverImage
+        coverImage: 'images/projects/tysonfsc/tysonfsc-cover.png'
     },
     {
         slug: 'the-end',
         title: theEndMetadata.title,
         category: 'Microsites',
-        coverImage: theEndCoverImage
+        coverImage: 'images/projects/the-end/the-end-cover.png'
     }
 ]
 
@@ -95,7 +87,8 @@ export default function Projects()
                                     src={project.coverImage}
                                     alt={project.title as string}
                                     className='rounded-tl-xl rounded-br-xl aspect-video object-cover object-center'
-                                    placeholder='blur'
+                                    width={1200}
+                                    height={630}
                                 />
                             </div>
                         </Link>

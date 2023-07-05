@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -6,13 +7,13 @@ import Paragraph from '@/app/(ui)/Paragraph'
 import Heading from '@/app/(ui)/Heading'
 import ExternalLink from '@/app/(ui)/ExternalLink'
 
-import coverImage from '@/app/projects/supermom/images/supermom-cover.png'
-import gameImage from '@/app/projects/supermom/images/supermom-game.png'
-import gameVnImage from '@/app/projects/supermom/images/supermom-game-vn.png'
-import quizImage from '@/app/projects/supermom/images/supermom-quiz.png'
-import quizResult from '@/app/projects/supermom/images/supermom-quiz-result.png'
-import dashboardImage1 from '@/app/projects/supermom/images/supermom-dashboard-1.png'
-import dashboardImage2 from '@/app/projects/supermom/images/supermom-dashboard-2.png'
+const coverImage = 'images/projects/supermom/supermom-cover.png'
+const gameImage = 'images/projects/supermom/supermom-game.png'
+const gameVnImage = 'images/projects/supermom/supermom-game-vn.png'
+const quizImage = 'images/projects/supermom/supermom-quiz.png'
+const quizResult = 'images/projects/supermom/supermom-quiz-result.png'
+const dashboardImage1 = 'images/projects/supermom/supermom-dashboard-1.png'
+const dashboardImage2 = 'images/projects/supermom/supermom-dashboard-2.png'
 
 const metadataTitle = 'NESTLÉ SUPERMOM'
 const metadataDescription = 'The SUPERMOM campaign was launched by Nestlé Malaysia to promote their products across four regions, Malaysia, Singapore, Vietnam, and Thailand.'
@@ -48,10 +49,9 @@ export default async function Page()
         SUPERMOM Game
       </Heading>
 
-      <Image
+      <img
         src={gameImage}
         alt='SUPERMOM Game'
-        placeholder='blur'
       />
 
       <Paragraph className='px-4 max-w-xl mx-auto'>
@@ -61,10 +61,9 @@ export default async function Page()
         The game itself was built using Cocos Creator, and embedded into the microsite which was built using Next.js, and the two systems communicated with each other using an API.
       </Paragraph>
 
-      <Image
+      <img
         src={gameVnImage}
         alt='SUPERMOM Game in Vietnamese'
-        placeholder='blur'
       />
 
       <Paragraph className='px-4 max-w-xl mx-auto'>
@@ -96,10 +95,9 @@ export default async function Page()
         SUPERMOM Quiz
       </Heading>
 
-      <Image
+      <img
         src={quizImage}
         alt='SUPERMOM Quiz'
-        placeholder='blur'
       />
 
       <Paragraph className='px-4 max-w-xl mx-auto'>
@@ -109,10 +107,9 @@ export default async function Page()
         Localizing the content was a challenge because of the difference in length of the questions and answers between the languages. The client wanted the size of the questions and answers to be the same across all regions, so I had to come up with a solution to make the content fit.
       </Paragraph>
 
-      <Image
+      <img
         src={quizResult}
         alt='SUPERMOM Quiz'
-        placeholder='blur'
       />
 
       <Paragraph className='px-4 max-w-xl mx-auto'>
@@ -155,20 +152,18 @@ export default async function Page()
         Dashboard
       </Heading>
 
-      <Image
+      <img
         src={dashboardImage1}
         alt='SUPERMOM Dashboard'
-        placeholder='blur'
       />
 
       <Paragraph className='px-4 max-w-xl mx-auto'>
         I built the CMS for the dashboard from scratch using Next.js and FaunaDB, based on the requirements provided. The images were stored in AWS S3 buckets.
       </Paragraph>
 
-      <Image
+      <img
         src={dashboardImage2}
         alt='SUPERMOM Dashboard'
-        placeholder='blur'
       />
 
       <Paragraph className='px-4 max-w-xl mx-auto'>

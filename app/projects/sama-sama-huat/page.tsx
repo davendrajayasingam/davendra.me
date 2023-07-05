@@ -1,14 +1,14 @@
+/* eslint-disable @next/next/no-img-element */
 import Image from 'next/image'
-import Link from 'next/link'
 
 import Project from '@/app/projects/Project'
 import Paragraph from '@/app/(ui)/Paragraph'
 import Heading from '@/app/(ui)/Heading'
 import ExternalLink from '@/app/(ui)/ExternalLink'
 
-import coverImage from '@/app/projects/sama-sama-huat/images/huat-cover.png'
-import gameImage from '@/app/projects/sama-sama-huat/images/huat-game.png'
-import gameOverImage from '@/app/projects/sama-sama-huat/images/huat-game-over.png'
+const coverImage = 'images/projects/sama-sama-huat/huat-cover.png'
+const gameImage = 'images/projects/sama-sama-huat/huat-game.png'
+const gameOverImage = 'images/projects/sama-sama-huat/huat-game-over.png'
 
 const metadataTitle = 'Lotus\'s Sama-Sama Huat'
 const metadataDescription = 'The Sama-Sama Huat campaign was launched by Lotus\'s Malaysia for Chinese New Year 2023.'
@@ -48,10 +48,9 @@ export default async function Page()
         <ExternalLink href='https://samasamahuat.com'>Check out the game here</ExternalLink>
       </Paragraph>
 
-      <Image
+      <img
         src={gameImage}
         alt='Sama Sama Huat Game'
-        placeholder='blur'
       />
 
       <Paragraph className='px-4 max-w-xl mx-auto'>
@@ -61,10 +60,9 @@ export default async function Page()
         The phase 'Sama Sama Huat' is a play on the Malay phrase 'Sama Sama' which means 'together'. The word 'Huat' is a Chinese word that means 'prosperity'. Combined, it means 'Together We Prosper'.
       </Paragraph>
 
-      <Image
+      <img
         src={gameOverImage}
         alt='Sama Sama Huat Game Over'
-        placeholder='blur'
       />
 
       <Paragraph className='px-4 max-w-xl mx-auto'>

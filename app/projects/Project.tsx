@@ -9,7 +9,7 @@ import ButtonLink from '@/app/(ui)/ButtonLink'
 type Props = {
     title: string,
     description: string,
-    coverImage: StaticImageData,
+    coverImage: string,
     children: React.ReactNode
 }
 
@@ -25,7 +25,8 @@ export default function Project({ title, description, coverImage, children }: Pr
             <Image
                 src={coverImage}
                 alt={title as string}
-                placeholder='blur'
+                width={1200}
+                height={630}
             />
 
             <Heading className='my-8'>

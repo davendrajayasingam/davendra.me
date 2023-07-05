@@ -28,7 +28,6 @@ export default function Page()
         className='h-screen object-cover object-top'
         fill
         loading='eager'
-        placeholder='blur'
       />
     </div>
     <Secret />

@@ -1,17 +1,18 @@
+/* eslint-disable @next/next/no-img-element */
 import Image from 'next/image'
 
 import Paragraph from '@/app/(ui)/Paragraph'
-import Project from '@/app/projects/Project'
-
-import coverImage from '@/app/projects/sixides/images/sixides-cover.png'
-import articlesImage from '@/app/projects/sixides/images/sixides-articles.png'
-import interiorDesignersImage from '@/app/projects/sixides/images/sixides-interior-designers.png'
-import eQuoteImage from '@/app/projects/sixides/images/sixides-equote.png'
-import almanacImage from '@/app/projects/sixides/images/sixides-almanac.png'
-import businessImage from '@/app/projects/sixides/images/sixides-business.png'
-import cmsImage from '@/app/projects/sixides/images/sixides-cms.png'
 import Heading from '@/app/(ui)/Heading'
 import ExternalLink from '@/app/(ui)/ExternalLink'
+import Project from '@/app/projects/Project'
+
+const coverImage = 'images/projects/sixides/sixides-cover.png'
+const articlesImage = 'images/projects/sixides/sixides-articles.png'
+const interiorDesignersImage = 'images/projects/sixides/sixides-interior-designers.png'
+const eQuoteImage = 'images/projects/sixides/sixides-equote.png'
+const almanacImage = 'images/projects/sixides/sixides-almanac.png'
+const businessImage = 'images/projects/sixides/sixides-business.png'
+const cmsImage = 'images/projects/sixides/sixides-cms.png'
 
 const metadataTitle = 'SIXiDES'
 const metadataDescription = 'Sixides is an ID-tech, consumer driven platform to bridge homeowners towards professionals, vendors and institutions.'
@@ -40,10 +41,9 @@ export default async function Page()
         The developers that the company initially engaged failed to deliver. The company dismissed them and brought me in as a freelance developer to deliver in an extremely short time frame. After a series of contact based extensions, I was offered a full-time position as the Lead Web Developer.
       </Paragraph>
 
-      <Image
+      <img
         src={articlesImage}
         alt='Articles'
-        placeholder='blur'
       />
 
       <Heading>
@@ -54,10 +54,9 @@ export default async function Page()
         I built the site using Next.js, and Tailwind CSS. I chose JavaScript over Typescript because speed was of the essence. AWS S3 was used to host the images, FaunaDB was the database of choice, and the site was deployed on Netlify. I was responsible for the entire stack, from the front-end to the back-end.
       </Paragraph>
 
-      <Image
+      <img
         src={interiorDesignersImage}
         alt='Interior Designers'
-        placeholder='blur'
       />
 
       <Heading>
@@ -68,10 +67,9 @@ export default async function Page()
         I worked closely with the CTO and Head of Creative. The design of the site was provided in an Adobe XD document, and I was responsible for converting it into a responsive website. The creative team was meticulous and I had to make sure that the site was pixel perfect.
       </Paragraph>
 
-      <Image
+      <img
         src={eQuoteImage}
         alt='Almanac'
-        placeholder='blur'
       />
 
       <Heading>
@@ -86,10 +84,9 @@ export default async function Page()
         There is an AI component involved in eQuote, and it was built by an external team. I was in charge of integrating the AI and making it web friendly.
       </Paragraph>
 
-      <Image
+      <img
         src={almanacImage}
         alt='Almanac'
-        placeholder='blur'
       />
 
       <Heading>
@@ -104,10 +101,9 @@ export default async function Page()
         They can also rate the work of the interior designers, and leave reviews. Once payment has been made, they can upload receipts and invoices, and upload photos of progress for keeping a record in case of a dispute.
       </Paragraph>
 
-      <Image
+      <img
         src={businessImage}
         alt='Business'
-        placeholder='blur'
       />
 
       <Heading>
@@ -118,10 +114,9 @@ export default async function Page()
         With SIXiDES for Business, interior designers can update the status of their projects and upload pictures to show progress. Before accepting a project, they can view project proposals, chat with homeowners, approve or reject the proposals, and assign their team members to projects.
       </Paragraph>
 
-      <Image
+      <img
         src={cmsImage}
         alt='CMS'
-        placeholder='blur'
       />
 
       <Heading>

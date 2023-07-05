@@ -1,7 +1,5 @@
 import OpenGraphImage from '@/app/OpenGraphImage'
 
-import coverImage from '@/app/projects/workday-experience-survey/images/workdayexperiencesurvey-cover.png'
-
 export const runtime = 'edge'
 
 export const alt = 'Workday Experience Survey'
@@ -12,10 +10,12 @@ export const size = {
 
 export const contentType = 'image/png'
 
+const coverImage = 'images/projects/workday-experience-survey/workdayexperiencesurvey-cover.png'
+
 export default async function Image() 
 {
     return OpenGraphImage({
         title: alt,
-        imageSrc: coverImage.src
+        imageSrc: coverImage
     })
 }

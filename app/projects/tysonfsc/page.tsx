@@ -1,12 +1,8 @@
-import Image from 'next/image'
-import Link from 'next/link'
-
 import Project from '@/app/projects/Project'
 import Paragraph from '@/app/(ui)/Paragraph'
-import Heading from '@/app/(ui)/Heading'
 import ExternalLink from '@/app/(ui)/ExternalLink'
 
-import coverImage from '@/app/projects/tysonfsc/images/tysonfsc-cover.png'
+const coverImage = 'images/projects/tysonfsc/tysonfsc-cover.png'
 
 const metadataTitle = 'TYSON FOODSERVICE CATALOGUE'
 const metadataDescription = 'A flipbook styled digital catalogue for Tyson Food Service Malaysia.'

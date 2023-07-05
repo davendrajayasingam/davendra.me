@@ -1,7 +1,5 @@
 import OpenGraphImage from '@/app/OpenGraphImage'
 
-import coverImage from '@/app/projects/supermom/images/supermom-cover.png'
-
 export const runtime = 'edge'
 
 export const alt = 'Nestlé Supermom'
@@ -12,10 +10,12 @@ export const size = {
 
 export const contentType = 'image/png'
 
+const coverImage = 'images/projects/supermom/supermom-cover.png'
+
 export default async function Image() 
 {
     return OpenGraphImage({
         title: alt,
-        imageSrc: coverImage.src
+        imageSrc: coverImage
     })
 }

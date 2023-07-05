@@ -1,7 +1,5 @@
 import OpenGraphImage from '@/app/OpenGraphImage'
 
-import coverImage from '@/app/projects/salam-lebaran/images/salamlebaran-cover.png'
-
 export const runtime = 'edge'
 
 export const alt = 'Maxis Salam Lebaran'
@@ -12,10 +10,12 @@ export const size = {
 
 export const contentType = 'image/png'
 
+const coverImage = 'images/projects/salam-lebaran/salamlebaran-cover.png'
+
 export default async function Image() 
 {
     return OpenGraphImage({
         title: alt,
-        imageSrc: coverImage.src
+        imageSrc: coverImage
     })
 }
