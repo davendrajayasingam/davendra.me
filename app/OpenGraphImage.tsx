@@ -2,12 +2,12 @@
 /* eslint-disable @next/next/no-img-element */
 import { ImageResponse } from 'next/server'
 
-import coverImage from '@/app/images/opengraph-default.png'
-import profilePicture from '@/app/images/davendra.png'
+import coverImage from '@/public/images/opengraph-default.png'
+import profilePicture from '@/public/images/davendra.png'
 
-const righteousFont = fetch(
-    new URL('/assets/Righteous-Regular.ttf', import.meta.url)
-).then((res) => res.arrayBuffer())
+// const righteousFont = fetch(
+//     new URL('../public/fonts/Righteous-Regular.ttf', import.meta.url)
+// ).then((res) => res.arrayBuffer())
 
 type Props = {
     title: string,
@@ -64,15 +64,15 @@ export default async function OpenGraphImage({ title, imageSrc }: Props)
         ),
         {
             width: 1200,
-            height: 630,
-            fonts: [
-                {
-                    name: 'Righteous',
-                    data: await righteousFont,
-                    style: 'normal',
-                    weight: 400
-                }
-            ]
+            height: 630
+            // fonts: [
+            //     {
+            //         name: 'Righteous',
+            //         data: await righteousFont,
+            //         style: 'normal',
+            //         weight: 400
+            //     }
+            // ]
         }
     )
 }

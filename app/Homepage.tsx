@@ -8,7 +8,7 @@ import Paragraph from '@/app/(ui)/Paragraph'
 import ExternalLink from '@/app/(ui)/ExternalLink'
 import Divider from '@/app/(ui)/Divider'
 
-import profilePicture from '@/app/images/davendra.png'
+import profilePicture from '@/public/images/davendra.png'
 
 export default function Homepage()
 {
