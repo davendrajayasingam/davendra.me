@@ -37,6 +37,10 @@ export default async function Page()
     <div className='mt-8 max-w-screen-xl mx-auto flex flex-col space-y-8'>
 
       <Paragraph className='px-4 max-w-xl mx-auto'>
+        Coming Soon!
+      </Paragraph>
+
+      {/* <Paragraph className='px-4 max-w-xl mx-auto'>
         The developers that the company initially engaged failed to deliver. The company dismissed them and brought me in as a freelance developer to deliver in an extremely short time frame. After a series of contact based extensions, I was offered a full-time position as the Lead Web Developer.
       </Paragraph>
 
@@ -142,7 +146,7 @@ export default async function Page()
 
       <Paragraph className='px-4 max-w-xl mx-auto'>
         This project was immensely challenging, but it was also crazy fun. The Agile Scrum model worked best, and embracing changes was a necessity. My team was super fun to work with, and I learned a lot. Check out our work at <ExternalLink href='https://sixides.com'>sixides.com</ExternalLink>.
-      </Paragraph>
+      </Paragraph> */}
 
     </div>
   </Project>
